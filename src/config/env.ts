@@ -1,0 +1,17 @@
+export const EnvConfig = {
+  nodeEnv: process.env.NODE_ENV,
+  brevoKey: process.env.BREVO_KEY,
+  frontendHost: process.env.FRONTEND_HOST,
+  googleApiKey: process.env.GOOGLE_API_KEY,
+  jwtExpiration: process.env.JWT_EXPIRATION,
+  jwtSecret: process.env.JWT_SECRET,
+  mailSender: process.env.MAIL_SENDER,
+  mailSmtpHost: process.env.MAIL_SMTP_HOST,
+  mailSmtpPassword: process.env.MAIL_SMTP_PASSWORD,
+  mailSmtpUsername: process.env.MAIL_SMTP_USERNAME,
+  supabaseUrl: process.env.SUPABASE_URL,
+  supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+  supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
+  databaseUrl: process.env.DATABASE_URL,
+  directUrl: process.env.DIRECT_URL,
+};
