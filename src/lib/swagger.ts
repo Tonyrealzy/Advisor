@@ -1,6 +1,6 @@
-import { EnvConfig } from "@/config/env";
-import path from "path";
 import swaggerJSDoc from "swagger-jsdoc";
+// import { EnvConfig } from "@/config/env";
+// import path from "path";
 
 const options: swaggerJSDoc.Options = {
   definition: {
@@ -32,15 +32,15 @@ const options: swaggerJSDoc.Options = {
   },
 
   // where your routes are defined
-  apis: ["./src/app/api/**/*.ts"],
+  apis: ["./app/api/**/*.ts"],
   // EnvConfig.nodeEnv !== "development"
   //   ? [
-  //       path.join(__dirname, "./src/app/api/**/*.js"),
-  //       path.join(__dirname, "./src/static/*.js"),
+  //       path.join(__dirname, "./app/api/**/*.js"),
+  //       path.join(__dirname, "./static/*.js"),
   //     ]
   //   : [
-  //       path.join(__dirname, "./src/app/api/**/*.ts"),
-  //       path.join(__dirname, "./src/static/*.ts"),
+  //       path.join(__dirname, "./app/api/**/*.ts"),
+  //       path.join(__dirname, "./static/*.ts"),
   //     ],
 };
 

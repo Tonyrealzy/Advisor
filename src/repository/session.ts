@@ -1,12 +1,14 @@
 import { prisma } from "@/lib/prisma";
 import { UserSession } from "@/models/auth";
 import { AppError } from "@/utilities/appError";
+import logger from "@/utilities/logger";
 
 export async function createUserSession(data: UserSession) {
   const response = await prisma.userSession.create({
     data,
   });
   if (!response) {
+    logger.error("Failed to create session");
     throw new AppError("Failed to create session");
   }
 
@@ -32,6 +34,7 @@ export async function getUserSession(userId: string, token: string) {
     },
   });
   if (!response) {
+    logger.error("Session not found for user");
     throw new AppError("Session not found");
   }
 
@@ -43,6 +46,7 @@ export async function deleteUserSession(userId: string) {
     where: { userId },
   });
   if (!response) {
+    logger.error("Failed to delete session");
     throw new AppError("Failed to delete session");
   }
 
@@ -62,6 +66,7 @@ export async function updateUserSessionToken(
     },
   });
   if (!response) {
+    logger.error("Failed to update session");
     throw new AppError("Failed to update session");
   }
 

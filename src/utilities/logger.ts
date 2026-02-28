@@ -3,9 +3,10 @@ import path from "path";
 import fs from "fs";
 import { EnvConfig } from "@/config/env";
 
-const logDir = path.join(__dirname, "../../logs");
+const logDir = path.join(process.cwd(), "logs");
+
 if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir);
+  fs.mkdirSync(logDir, { recursive: true });
 }
 
 const isDevelopment = EnvConfig.nodeEnv === "development";

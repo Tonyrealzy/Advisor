@@ -1,7 +1,9 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { EnvConfig } from "./env";
+import logger from "@/utilities/logger";
 
 if (!EnvConfig.googleApiKey) {
+  logger.error("Google API key is missing.");
   throw new Error("Google API key is missing.");
 }
 
@@ -17,6 +19,7 @@ export async function getAIResponse(message: string): Promise<string> {
   const text = response.text();
 
   if (!text) {
+    logger.error("No response from Gemini");
     throw new Error("No response from Gemini");
   }
 
