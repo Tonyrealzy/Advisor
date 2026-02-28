@@ -1,12 +1,14 @@
 import { prisma } from "@/lib/prisma";
 import { User } from "@/models/user";
 import { AppError } from "@/utilities/appError";
+import logger from "@/utilities/logger";
 
 export async function createUser(data: User) {
   const response = await prisma.user.create({
     data,
   });
   if (!response) {
+    logger.error("Failed to create user");
     throw new AppError("Failed to create user");
   }
 
@@ -21,6 +23,7 @@ export async function updateUserStatus(id: string, isActive: boolean) {
     },
   });
   if (!response) {
+    logger.error("Failed to update user status");
     throw new AppError("Failed to update user status");
   }
 
@@ -32,6 +35,7 @@ export async function getUserByEmail(email: string) {
     where: { email },
   });
   if (!response) {
+    logger.error("Invalid credentials for email: " + email);
     throw new AppError("Invalid credentials.");
   }
 
@@ -46,6 +50,7 @@ export async function getActiveUserByEmail(email: string) {
     },
   });
   if (!response) {
+    logger.error("Invalid credentials for email: " + email);
     throw new AppError("Invalid credentials.");
   }
 
@@ -66,6 +71,7 @@ export async function getUserByUsername(name: string) {
     where: { name },
   });
   if (!response) {
+    logger.error("Invalid credentials for username: " + name);
     throw new AppError("Invalid credentials.");
   }
 
@@ -77,6 +83,7 @@ export async function getUserById(id: string) {
     where: { id },
   });
   if (!response) {
+    logger.error("Invalid credentials for user ID: " + id);
     throw new AppError("Invalid credentials.");
   }
 
@@ -88,6 +95,7 @@ export async function deleteUser(id: string) {
     where: { id },
   });
   if (!response) {
+    logger.error("Failed to delete user with ID: " + id);
     throw new AppError("Failed to delete user");
   }
 

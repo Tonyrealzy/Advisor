@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import bcrypt from "bcryptjs";
 
 export const hashPassword = async (password: string) => {
@@ -18,4 +19,15 @@ export function rawBodySaver(req: any, res: any, buf: any) {
   if (buf && buf.length) {
     req.rawBody = buf.toString("utf8");
   }
+}
+
+export function generateToken() {
+  const rawToken = crypto.randomBytes(32).toString("hex")
+
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(rawToken)
+    .digest("hex")
+
+  return { rawToken, hashedToken }
 }

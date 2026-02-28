@@ -22,8 +22,30 @@ import { NextResponse } from "next/server";
  *                 type: string
  *     responses:
  *       200:
- *         description: Successful login
+ *         description: Successfully logged in
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 response:
+ *                   type: string
+ *                   nullable: true
+ *       500:
+ *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 error:
+ *                   type: string
  */
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

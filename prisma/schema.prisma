@@ -1,12 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -78,4 +72,27 @@ model UserSession {
 
   @@index([id])
   @@index([userId])
+}
+
+model Image {
+  id         String   @id
+  ownerId    String
+  sha256     String   @unique
+  phash      String?
+  mime       String
+  ext        String
+  width      Int
+  height     Int
+  bytes      Int
+  storageKey String
+  visibility String
+  createdAt  DateTime @default(now())
+}
+
+model ShortLink {
+  id        Int       @id @default(autoincrement())
+  code      String    @unique
+  longUrl   String
+  createdAt DateTime  @default(now())
+  expiresAt DateTime?
 }

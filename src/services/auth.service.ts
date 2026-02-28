@@ -12,12 +12,13 @@ import {
   getUserById,
   updateUserStatus,
 } from "@/repository/user";
-import { comparePassword, hashPassword } from "@/utilities/hash";
+import { comparePassword, generateToken, hashPassword } from "@/utilities/hash";
 import { generateAccessToken } from "@/utilities/jwtUtils";
 import { SignUp } from "@/models/request";
 import { MailService } from "./mail.service";
-import { createPasswordReset, getPasswordResetByToken } from "@/repository/password";
+import { createPasswordReset, getPasswordResetByEmail, getPasswordResetByToken, updatePasswordReset } from "@/repository/password";
 import { EnvConfig } from "@/config/env";
+import { AppError } from "@/utilities/appError";
 
 export const AuthService = {
   login: async (email: string, password: string) => {
@@ -101,10 +102,18 @@ export const AuthService = {
     await MailService.sendConfirmSignupMail({
       name: data.userName,
       email: data.email,
-      resetLink: `${EnvConfig.frontendHost}?email=${data.email}&token=${token}`,
+      resetLink: `${EnvConfig.frontendHost}/verify?email=${data.email}&token=${token}`,
     });
 
-    return newUser;
+    const userData = {
+      name: newUser.name,
+      email: newUser.email,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      isActive: newUser.isActive,
+    }
+
+    return userData;
   },
 
   confirmSignup: async (email: string, token: string) => {
@@ -120,5 +129,43 @@ export const AuthService = {
     await updateUserStatus(user.id, true);
 
     return { message: "Account confirmed successfully" };
+  },
+
+   resendSignupLink: async (email: string) => {
+    const passwordResponse = await getPasswordResetByEmail(email);
+    if (!passwordResponse) {
+      throw new AppError("Password reset not found for the specified email");
+    }
+
+    const existingUser = await getUserByEmail(email);
+    if (existingUser.isActive)
+      throw new AppError("Account already verified. Please login.");
+
+    const { rawToken, hashedToken } = generateToken();
+    const id = crypto.randomUUID();
+    const expiresAt = new Date(Date.now() + 30 * 60 * 1000);
+
+    const resetResponse = await getPasswordResetByEmail(email);
+    if (!resetResponse) {
+      await createPasswordReset({
+        id,
+        email,
+        userId: existingUser.id,
+        token: hashedToken,
+        expiresAt: String(expiresAt),
+      });
+      return;
+    }
+    await updatePasswordReset(resetResponse.id, {
+      token: hashedToken,
+      expiresAt,
+    });
+
+    const resetLink = `${EnvConfig.frontendHost}/verify?email=${email}&token=${rawToken}`;
+    await MailService.sendConfirmSignupMail({
+      email,
+      name: existingUser.name,
+      resetLink,
+    });
   },
 };

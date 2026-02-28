@@ -15,3 +15,8 @@ export interface UserSession {
   email?: string;
   createdAt?: string;
 }
+
+export interface PasswordUpdate {
+  token?: string;
+  expiresAt?: Date;
+}
