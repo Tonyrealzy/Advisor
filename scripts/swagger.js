@@ -1,6 +1,8 @@
 import swaggerJSDoc from "swagger-jsdoc";
+import fs from "fs";
+import path from "path";
 
-const options: swaggerJSDoc.Options = {
+const options = {
   definition: {
     openapi: "3.0.0",
     info: {
@@ -31,10 +33,12 @@ const options: swaggerJSDoc.Options = {
 
   // where your routes are defined
   apis: ["./app/api/**/*.ts"],
-  // apis:
-  //   EnvConfig.nodeEnv !== "development"
-  //     ? ["./.next/server/app/api/**/*.js"]
-  //     : ["./app/api/**/*.ts"],
 };
 
 export const swaggerSpec = swaggerJSDoc(options);
+
+const outputPath = path.join(process.cwd(), "public", "swagger.json");
+
+fs.writeFileSync(outputPath, JSON.stringify(swaggerSpec, null, 2));
+
+console.log("Swagger JSON generated at public/swagger.json");
