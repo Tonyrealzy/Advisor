@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm prisma generate && next build",
+    "build": "pnpm prisma generate && pnpm generate-swagger && next build",
     "start": "next start",
     "lint": "eslint",
+    "generate-swagger": "node scripts/swagger.js",
     "postinstall": "pnpm prisma generate"
   },
   "dependencies": {
