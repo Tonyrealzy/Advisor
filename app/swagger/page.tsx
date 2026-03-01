@@ -1,8 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { EnvConfig } from "@/config/env";
-import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
+
+const SwaggerUI = dynamic(() => import("swagger-ui-react"), { ssr: false });
 
 export default function ApiDocs() {
   if (EnvConfig.nodeEnv !== "development") {
