@@ -9,7 +9,7 @@ datasource db {
 
 model AIPersistedResponse {
   id        Int      @id @default(autoincrement())
-  userId    String
+  userId    String   @db.Uuid
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   status    String
@@ -23,6 +23,7 @@ model AIPersistedResponse {
 
   @@index([id])
   @@index([userId])
+  @@index([createdAt])
 }
 
 model User {
@@ -49,21 +50,22 @@ model User {
 
 model PasswordReset {
   id        String   @id @default(uuid()) @db.Uuid
-  userId    String
+  userId    String   @db.Uuid
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  email     String   @unique
+  email     String
   token     String   @unique
   expiresAt DateTime
   createdAt DateTime @default(now())
 
   @@index([id])
+  @@index([email])
   @@index([userId])
 }
 
 model UserSession {
   id        String   @id @default(uuid()) @db.Uuid
-  userId    String   @unique
+  userId    String   @db.Uuid   @unique
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   token     String   @unique

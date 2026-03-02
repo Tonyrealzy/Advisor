@@ -48,7 +48,7 @@ export async function getPasswordResetByToken(token: string) {
 }
 
 export async function getPasswordResetByEmail(email: string) {
-  const response = await prisma.passwordReset.findUnique({
+  const response = await prisma.passwordReset.findFirst({
     where: { email },
   });
   if (!response) {

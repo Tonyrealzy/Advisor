@@ -7,6 +7,7 @@ import { SendOtpRequest } from "@/models/request";
 import logger from "@/utilities/logger";
 
 export const OTP_EXPIRY_MINUTES = 10;
+
 export const MailService = {
   sendConfirmSignupMail: async (data: SendOtpRequest) => {
     const confirmAcctContent = renderAccountConfirmationEmail({

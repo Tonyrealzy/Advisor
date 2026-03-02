@@ -1,5 +1,7 @@
 import { getAIResponse } from "@/config/ai";
 import { AIServiceRequest } from "@/models/request";
+import { createAIResponse, getAllAIResponses } from "@/repository/ai";
+import { formatResponse } from "@/utilities/format";
 
 export const AIService = {
   getFineTunedResponse: async (req: AIServiceRequest): Promise<string> => {
@@ -32,5 +34,36 @@ export const AIService = {
         `;
 
     return getAIResponse(prompt);
+  },
+
+  getRecommendations: async (req: AIServiceRequest, userId: string) => {
+    const response = await AIService.getFineTunedResponse(req);
+
+    const formattedResponse = formatResponse(response);
+    const status = "COMPLETED";
+
+    await createAIResponse({
+      userId,
+      status,
+      query: formattedResponse,
+      data: formattedResponse,
+      createdAt: new Date(),
+    });
+
+    return formattedResponse;
+  },
+
+  getStoredResponses: async (
+    userId: string,
+    pagination: { page: number; limit: number },
+    from?: Date,
+    to?: Date,
+  ) => {
+    const response = await getAllAIResponses(userId, pagination, from, to);
+    return {
+      message: "Responses retrieved successfully",
+      data: response,
+      pagination,
+    };
   },
 };

@@ -3,14 +3,14 @@ export interface PasswordReset {
   email: string;
   token: string;
   id?: string;
-  expiresAt: string;
+  expiresAt: Date;
   createdAt?: string;
 }
 
 export interface UserSession {
   userId: string;
   token: string;
-  expiresAt: string;
+  expiresAt: Date;
   id?: string;
   email?: string;
   createdAt?: string;

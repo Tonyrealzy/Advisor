@@ -178,7 +178,7 @@ export type UserSessionWhereInput = {
   OR?: Prisma.UserSessionWhereInput[]
   NOT?: Prisma.UserSessionWhereInput | Prisma.UserSessionWhereInput[]
   id?: Prisma.UuidFilter<"UserSession"> | string
-  userId?: Prisma.StringFilter<"UserSession"> | string
+  userId?: Prisma.UuidFilter<"UserSession"> | string
   token?: Prisma.StringFilter<"UserSession"> | string
   expiresAt?: Prisma.DateTimeFilter<"UserSession"> | Date | string
   createdAt?: Prisma.DateTimeFilter<"UserSession"> | Date | string
@@ -222,7 +222,7 @@ export type UserSessionScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserSessionScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserSessionScalarWhereWithAggregatesInput | Prisma.UserSessionScalarWhereWithAggregatesInput[]
   id?: Prisma.UuidWithAggregatesFilter<"UserSession"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"UserSession"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"UserSession"> | string
   token?: Prisma.StringWithAggregatesFilter<"UserSession"> | string
   expiresAt?: Prisma.DateTimeWithAggregatesFilter<"UserSession"> | Date | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"UserSession"> | Date | string

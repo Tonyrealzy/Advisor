@@ -45,10 +45,6 @@ export async function deleteUserSession(userId: string) {
   const response = await prisma.userSession.delete({
     where: { userId },
   });
-  if (!response) {
-    logger.error("Failed to delete session");
-    throw new AppError("Failed to delete session");
-  }
 
   return response;
 }

@@ -1,6 +1,3 @@
-import { AuthService } from "@/services";
-import { NextResponse } from "next/server";
-
 /**
  * @swagger
  * /api/auth/logout:
@@ -45,6 +42,10 @@ import { NextResponse } from "next/server";
  *                 error:
  *                   type: string
  */
+
+import { AuthService } from "@/services";
+import { NextResponse } from "next/server";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

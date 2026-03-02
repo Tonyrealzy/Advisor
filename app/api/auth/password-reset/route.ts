@@ -1,6 +1,3 @@
-import { PasswordService } from "@/services/password.service";
-import { NextResponse } from "next/server";
-
 /**
  * @swagger
  * /api/auth/password-reset:
@@ -44,6 +41,10 @@ import { NextResponse } from "next/server";
  *                 error:
  *                   type: string
  */
+
+import { PasswordService } from "@/services";
+import { NextResponse } from "next/server";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -51,7 +52,7 @@ export async function POST(req: Request) {
     const response = await PasswordService.resetPassword(email);
     return NextResponse.json({
       success: true,
-      response,
+      message: response,
     });
   } catch (error: any) {
     return NextResponse.json(
