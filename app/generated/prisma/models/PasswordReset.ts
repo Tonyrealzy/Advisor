@@ -185,7 +185,7 @@ export type PasswordResetWhereInput = {
   OR?: Prisma.PasswordResetWhereInput[]
   NOT?: Prisma.PasswordResetWhereInput | Prisma.PasswordResetWhereInput[]
   id?: Prisma.UuidFilter<"PasswordReset"> | string
-  userId?: Prisma.StringFilter<"PasswordReset"> | string
+  userId?: Prisma.UuidFilter<"PasswordReset"> | string
   email?: Prisma.StringFilter<"PasswordReset"> | string
   token?: Prisma.StringFilter<"PasswordReset"> | string
   expiresAt?: Prisma.DateTimeFilter<"PasswordReset"> | Date | string
@@ -205,16 +205,16 @@ export type PasswordResetOrderByWithRelationInput = {
 
 export type PasswordResetWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  email?: string
   token?: string
   AND?: Prisma.PasswordResetWhereInput | Prisma.PasswordResetWhereInput[]
   OR?: Prisma.PasswordResetWhereInput[]
   NOT?: Prisma.PasswordResetWhereInput | Prisma.PasswordResetWhereInput[]
-  userId?: Prisma.StringFilter<"PasswordReset"> | string
+  userId?: Prisma.UuidFilter<"PasswordReset"> | string
+  email?: Prisma.StringFilter<"PasswordReset"> | string
   expiresAt?: Prisma.DateTimeFilter<"PasswordReset"> | Date | string
   createdAt?: Prisma.DateTimeFilter<"PasswordReset"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-}, "id" | "email" | "token">
+}, "id" | "token">
 
 export type PasswordResetOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -233,7 +233,7 @@ export type PasswordResetScalarWhereWithAggregatesInput = {
   OR?: Prisma.PasswordResetScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PasswordResetScalarWhereWithAggregatesInput | Prisma.PasswordResetScalarWhereWithAggregatesInput[]
   id?: Prisma.UuidWithAggregatesFilter<"PasswordReset"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"PasswordReset"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"PasswordReset"> | string
   email?: Prisma.StringWithAggregatesFilter<"PasswordReset"> | string
   token?: Prisma.StringWithAggregatesFilter<"PasswordReset"> | string
   expiresAt?: Prisma.DateTimeWithAggregatesFilter<"PasswordReset"> | Date | string
@@ -428,7 +428,7 @@ export type PasswordResetScalarWhereInput = {
   OR?: Prisma.PasswordResetScalarWhereInput[]
   NOT?: Prisma.PasswordResetScalarWhereInput | Prisma.PasswordResetScalarWhereInput[]
   id?: Prisma.UuidFilter<"PasswordReset"> | string
-  userId?: Prisma.StringFilter<"PasswordReset"> | string
+  userId?: Prisma.UuidFilter<"PasswordReset"> | string
   email?: Prisma.StringFilter<"PasswordReset"> | string
   token?: Prisma.StringFilter<"PasswordReset"> | string
   expiresAt?: Prisma.DateTimeFilter<"PasswordReset"> | Date | string

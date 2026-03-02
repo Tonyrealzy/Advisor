@@ -1,1 +1,34 @@
 [2026-02-28 23:17:07] [ERROR] - [development]: Invalid credentials for email: string
+[2026-03-02 08:39:00] [ERROR] - [development]: Invalid credentials for email: user@example.com
+[2026-03-02 08:39:24] [ERROR] - [development]: Invalid credentials for email: user@example.com
+[2026-03-02 08:48:45] [ERROR] - [development]: No existing user found with email: user@example.com
+[2026-03-02 08:49:22] [ERROR] - [development]: No existing user found with email: user@example.com
+[2026-03-02 08:54:26] [ERROR] - [development]: No existing user found with email: user@example.com
+[2026-03-02 09:12:57] [INFO] - [development]: Sending OTP mail to: user@example.com
+[2026-03-02 09:12:59] [ERROR] - [development]: Error sending Mail:  Mail command failed: 451 4.0.0 Invalid from
+[2026-03-02 10:59:58] [ERROR] - [development]: null
+[2026-03-02 10:59:58] [ERROR] - [development]: No existing user found with email: user@example.com
+[2026-03-02 10:59:59] [INFO] - [development]: Sending OTP mail to: user@example.com
+[2026-03-02 11:00:01] [INFO] - [development]: Mail sent
+[2026-03-02 11:01:51] [INFO] - [development]: Sending OTP mail to: user@example.com
+[2026-03-02 11:01:53] [INFO] - [development]: Mail sent
+[2026-03-02 11:01:53] [ERROR] - [development]: Token generated for email verification: 12777a8e-2688-498f-92e6-6d96c1c8d5f3
+[2026-03-02 11:16:37] [ERROR] - [development]: null
+[2026-03-02 11:16:37] [ERROR] - [development]: No existing user found with email: user1@example.com
+[2026-03-02 11:16:38] [INFO] - [development]: Sending OTP mail to: user1@example.com
+[2026-03-02 11:16:40] [INFO] - [development]: Mail sent
+[2026-03-02 11:16:40] [ERROR] - [development]: Token generated for email verification: 7c0673f5-e02d-4e0a-95d2-71bfaaff3090
+[2026-03-02 11:18:43] [INFO] - [development]: Sending Password Reset OTP mail to: user1@example.com
+[2026-03-02 11:18:45] [INFO] - [development]: Mail sent
+[2026-03-02 11:22:28] [INFO] - [development]: Sending Password Reset OTP mail to: user1@example.com
+[2026-03-02 11:22:30] [INFO] - [development]: Mail sent
+[2026-03-02 11:25:29] [INFO] - [development]: Sending Password Reset OTP mail to: user1@example.com
+[2026-03-02 11:25:31] [INFO] - [development]: Mail sent
+[2026-03-02 11:25:31] [INFO] - [development]: Token sent to 47cd814cfcf50828a78eaa255aadec4c1e6085add626557494201162d4669295
+[2026-03-02 11:26:27] [ERROR] - [development]: Invalid or expired reset token
+[2026-03-02 11:28:19] [ERROR] - [development]: Invalid or expired reset token
+[2026-03-02 16:46:20] [INFO] - [development]: Formatted AI response: 
+[2026-03-02 16:49:10] [INFO] - [development]: Formatted AI response: 
+[2026-03-02 19:20:39] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-02 19:22:06] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-02 19:22:58] [INFO] - [development]: Found 1 AI responses for user

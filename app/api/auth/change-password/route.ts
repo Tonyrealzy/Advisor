@@ -1,6 +1,3 @@
-import { PasswordService } from "@/services/password.service";
-import { NextResponse } from "next/server";
-
 /**
  * @swagger
  * /api/auth/change-password:
@@ -21,7 +18,7 @@ import { NextResponse } from "next/server";
  *                 example: 1234567890abcdef
  *               newPassword:
  *                 type: string
- *                 example: newStrongPassword123
+ *                 example: newStrongPassword@123
  *     responses:
  *       200:
  *         description: Password changed successfully
@@ -46,10 +43,27 @@ import { NextResponse } from "next/server";
  *                 error:
  *                   type: string
  */
+
+
+import { changePasswordSchema } from "@/lib/validations";
+import { PasswordService } from "@/services";
+import { NextResponse } from "next/server";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { token, newPassword } = body;
+    const validated = await changePasswordSchema.safeParseAsync(body);
+    if (!validated.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          errors: validated.error.flatten(),
+        },
+        { status: 400 }
+      );
+    }
+
+    const { token, newPassword } = validated.data;
     const response = await PasswordService.changePassword(token, newPassword);
     return NextResponse.json({
       success: true,

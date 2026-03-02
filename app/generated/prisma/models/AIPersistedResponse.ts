@@ -232,7 +232,7 @@ export type AIPersistedResponseWhereInput = {
   OR?: Prisma.AIPersistedResponseWhereInput[]
   NOT?: Prisma.AIPersistedResponseWhereInput | Prisma.AIPersistedResponseWhereInput[]
   id?: Prisma.IntFilter<"AIPersistedResponse"> | number
-  userId?: Prisma.StringFilter<"AIPersistedResponse"> | string
+  userId?: Prisma.UuidFilter<"AIPersistedResponse"> | string
   status?: Prisma.StringFilter<"AIPersistedResponse"> | string
   query?: Prisma.JsonFilter<"AIPersistedResponse">
   data?: Prisma.JsonNullableFilter<"AIPersistedResponse">
@@ -261,7 +261,7 @@ export type AIPersistedResponseWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.AIPersistedResponseWhereInput | Prisma.AIPersistedResponseWhereInput[]
   OR?: Prisma.AIPersistedResponseWhereInput[]
   NOT?: Prisma.AIPersistedResponseWhereInput | Prisma.AIPersistedResponseWhereInput[]
-  userId?: Prisma.StringFilter<"AIPersistedResponse"> | string
+  userId?: Prisma.UuidFilter<"AIPersistedResponse"> | string
   status?: Prisma.StringFilter<"AIPersistedResponse"> | string
   query?: Prisma.JsonFilter<"AIPersistedResponse">
   data?: Prisma.JsonNullableFilter<"AIPersistedResponse">
@@ -294,7 +294,7 @@ export type AIPersistedResponseScalarWhereWithAggregatesInput = {
   OR?: Prisma.AIPersistedResponseScalarWhereWithAggregatesInput[]
   NOT?: Prisma.AIPersistedResponseScalarWhereWithAggregatesInput | Prisma.AIPersistedResponseScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"AIPersistedResponse"> | number
-  userId?: Prisma.StringWithAggregatesFilter<"AIPersistedResponse"> | string
+  userId?: Prisma.UuidWithAggregatesFilter<"AIPersistedResponse"> | string
   status?: Prisma.StringWithAggregatesFilter<"AIPersistedResponse"> | string
   query?: Prisma.JsonWithAggregatesFilter<"AIPersistedResponse">
   data?: Prisma.JsonNullableWithAggregatesFilter<"AIPersistedResponse">
@@ -548,7 +548,7 @@ export type AIPersistedResponseScalarWhereInput = {
   OR?: Prisma.AIPersistedResponseScalarWhereInput[]
   NOT?: Prisma.AIPersistedResponseScalarWhereInput | Prisma.AIPersistedResponseScalarWhereInput[]
   id?: Prisma.IntFilter<"AIPersistedResponse"> | number
-  userId?: Prisma.StringFilter<"AIPersistedResponse"> | string
+  userId?: Prisma.UuidFilter<"AIPersistedResponse"> | string
   status?: Prisma.StringFilter<"AIPersistedResponse"> | string
   query?: Prisma.JsonFilter<"AIPersistedResponse">
   data?: Prisma.JsonNullableFilter<"AIPersistedResponse">

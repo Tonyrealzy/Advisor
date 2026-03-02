@@ -10,15 +10,22 @@ import {
   deleteUser,
   getUserByEmail,
   getUserById,
+  getUserDetailsByEmail,
   updateUserStatus,
 } from "@/repository/user";
 import { comparePassword, generateToken, hashPassword } from "@/utilities/hash";
 import { generateAccessToken } from "@/utilities/jwtUtils";
 import { SignUp } from "@/models/request";
-import { MailService } from "./mail.service";
-import { createPasswordReset, getPasswordResetByEmail, getPasswordResetByToken, updatePasswordReset } from "@/repository/password";
+import {
+  createPasswordReset,
+  getPasswordResetByEmail,
+  getPasswordResetByToken,
+  updatePasswordReset,
+} from "@/repository/password";
 import { EnvConfig } from "@/config/env";
 import { AppError } from "@/utilities/appError";
+import logger from "@/utilities/logger";
+import { MailService } from "./mail.service";
 
 export const AuthService = {
   login: async (email: string, password: string) => {
@@ -41,7 +48,7 @@ export const AuthService = {
       name: existingUser.name,
     });
 
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    const expiresAt = new Date(Date.now() + 120 * 60 * 1000);
     const userSession = await getUserSessionByUserId(existingUser.id);
     if (!userSession) {
       const id = crypto.randomUUID();
@@ -50,7 +57,7 @@ export const AuthService = {
         id,
         userId: existingUser.id,
         token,
-        expiresAt: String(expiresAt),
+        expiresAt: expiresAt,
       });
 
       return { token };
@@ -58,52 +65,74 @@ export const AuthService = {
 
     await updateUserSessionToken(userSession?.id, token, expiresAt);
 
-    return { token };
+    const user = {
+      name: existingUser.name,
+      email: existingUser.email,
+      firstName: existingUser.firstName,
+      lastName: existingUser.lastName,
+      isActive: existingUser.isActive,
+    };
+
+    return { token, message: "Login successful", user };
   },
 
   logout: async (email: string) => {
     const response = await getUserByEmail(email);
 
-    await deleteUserSession(response.id);
-    return;
+    const sessionResponse = await deleteUserSession(response.id);
+    if (!sessionResponse) {
+      logger.error("Failed to delete session");
+      throw new AppError("Failed to delete session");
+    }
+
+    return { message: "Logout successful" };
   },
 
   signUp: async (data: SignUp) => {
-    const existingUser = await getUserByEmail(data.email);
+    const existingUser = await getUserDetailsByEmail(data.email);
+    if (!existingUser) {
+      logger.error("No existing user found with email: " + data.email);
+    }
     if (existingUser && existingUser.isActive) {
       throw new Error("User with this email already exists");
     }
 
     const hashedPassword = await hashPassword(data.password);
-    if (existingUser && !existingUser.isActive) {
-      await deleteUserSession(existingUser.id);
+    if (existingUser && !existingUser.isActive && existingUser.id) {
       await deleteUser(existingUser.id);
+      const response = await getUserSessionByUserId(existingUser.id);
+      if (response) {
+        await deleteUserSession(existingUser.id);
+      }
     }
 
     const id = crypto.randomUUID();
     const newUser = await createUser({
-        ...data,
-        id,
-        name: data.userName,
-        password: hashedPassword,
+      id,
+      name: data.userName,
+      password: hashedPassword,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
     });
-    
+
     const passwordResetId = crypto.randomUUID();
     const token = crypto.randomUUID();
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
     await createPasswordReset({
-      ...data,
       userId: newUser.id,
       id: passwordResetId,
-      expiresAt: String(expiresAt),
-      token
-    })
+      email: newUser.email,
+      expiresAt: expiresAt,
+      token,
+    });
 
     await MailService.sendConfirmSignupMail({
       name: data.userName,
       email: data.email,
       resetLink: `${EnvConfig.frontendHost}/verify?email=${data.email}&token=${token}`,
     });
+    logger.error("Token generated for email verification: " + token);
 
     const userData = {
       name: newUser.name,
@@ -111,7 +140,7 @@ export const AuthService = {
       firstName: newUser.firstName,
       lastName: newUser.lastName,
       isActive: newUser.isActive,
-    }
+    };
 
     return userData;
   },
@@ -131,7 +160,7 @@ export const AuthService = {
     return { message: "Account confirmed successfully" };
   },
 
-   resendSignupLink: async (email: string) => {
+  resendSignupLink: async (email: string) => {
     const passwordResponse = await getPasswordResetByEmail(email);
     if (!passwordResponse) {
       throw new AppError("Password reset not found for the specified email");
@@ -152,7 +181,7 @@ export const AuthService = {
         email,
         userId: existingUser.id,
         token: hashedToken,
-        expiresAt: String(expiresAt),
+        expiresAt: expiresAt,
       });
       return;
     }
@@ -167,5 +196,7 @@ export const AuthService = {
       name: existingUser.name,
       resetLink,
     });
+
+    return { message: "Verification email resent successfully" };
   },
 };

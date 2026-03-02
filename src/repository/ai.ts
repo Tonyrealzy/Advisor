@@ -1,28 +1,42 @@
 import { prisma } from "@/lib/prisma";
+import { CreateAIRecord, Pagination } from "@/models/ai";
 import { AppError } from "@/utilities/appError";
+import { transformResponse } from "@/utilities/format";
 import logger from "@/utilities/logger";
 
-export async function getAllAIResponses(userId: string) {
-  const response = await prisma.aIPersistedResponse.findMany({
-    where: { userId },
+export async function getAllAIResponses(
+  userId: string,
+  pagination: Pagination = { page: 1, limit: 10 },
+  from?: Date,
+  to?: Date,
+) {
+  const { page, limit } = pagination;
+  const skip = (page - 1) * limit;
+
+  const responses = await prisma.aIPersistedResponse.findMany({
+    where: {
+      userId,
+      createdAt: {
+        gte: from,
+        lte: to,
+      },
+    },
     orderBy: { createdAt: "desc" },
+    skip,
+    take: limit,
   });
-  if (!response) {
+
+  logger.info(`Found ${responses.length} AI responses for user`);
+
+  if (!responses || responses.length === 0) {
     logger.error("No AI responses found for user");
     throw new AppError("No AI responses found");
   }
 
-  return response;
+  return responses.map(transformResponse);
 }
 
-export async function createAIResponse(data: {
-  userId: string;
-  status: string;
-  query: any;
-  data?: any;
-  message?: string;
-  error?: string;
-}) {
+export async function createAIResponse(data: CreateAIRecord) {
   const response = await prisma.aIPersistedResponse.create({
     data,
   });

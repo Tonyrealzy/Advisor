@@ -10,7 +10,7 @@ if (!EnvConfig.googleApiKey) {
 const genAI = new GoogleGenerativeAI(EnvConfig.googleApiKey);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash", // closest stable equivalent
+  model: "gemini-2.5-flash", // closest stable equivalent
 });
 
 export async function getAIResponse(message: string): Promise<string> {

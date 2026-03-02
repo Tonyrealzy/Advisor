@@ -1,6 +1,3 @@
-import { AuthService } from "@/services";
-import { NextResponse } from "next/server";
-
 /**
  * @swagger
  * /api/auth/signup:
@@ -22,7 +19,7 @@ import { NextResponse } from "next/server";
  *                 example: user@example.com
  *               password:
  *                 type: string
- *                 example: strongPassword123
+ *                 example: strongPassword@123
  *               firstName:
  *                 type: string
  *                 example: John
@@ -67,6 +64,10 @@ import { NextResponse } from "next/server";
  *                 error:
  *                   type: string
  */
+
+import { AuthService } from "@/services";
+import { NextResponse } from "next/server";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

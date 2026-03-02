@@ -22,7 +22,7 @@ export const sendMail = async (
 ) => {
   try {
     await transporter.sendMail({
-      from: EnvConfig.mailSender,
+      from: EnvConfig.mailSmtpUsername,
       to: to, // list of receivers
       subject: subject, // Subject line
       html: textContent, // plain text body

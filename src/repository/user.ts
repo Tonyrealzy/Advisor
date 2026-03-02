@@ -42,6 +42,17 @@ export async function getUserByEmail(email: string) {
   return response;
 }
 
+export async function getUserDetailsByEmail(email: string) {
+  const response = await prisma.user.findUnique({
+    where: { email },
+  });
+  if (!response) {
+    logger.error(response);
+  }
+
+  return response;
+}
+
 export async function getActiveUserByEmail(email: string) {
   const response = await prisma.user.findFirst({
     where: {
@@ -96,7 +107,6 @@ export async function deleteUser(id: string) {
   });
   if (!response) {
     logger.error("Failed to delete user with ID: " + id);
-    throw new AppError("Failed to delete user");
   }
 
   return response;
