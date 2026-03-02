@@ -1,8 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-// import { EnvConfig } from "@/config/env";
 import "swagger-ui-react/swagger-ui.css";
+// import { EnvConfig } from "@/config/env";
 
 const SwaggerUI = dynamic(() => import("swagger-ui-react"), { ssr: false });
 
