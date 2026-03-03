@@ -130,7 +130,7 @@ export const AuthService = {
     await MailService.sendConfirmSignupMail({
       name: data.userName,
       email: data.email,
-      resetLink: `${EnvConfig.frontendHost}/verify?email=${data.email}&token=${token}`,
+      resetLink: `${EnvConfig.frontendHost}/confirm?email=${data.email}&token=${token}`,
     });
     logger.error("Token generated for email verification: " + token);
 
@@ -190,7 +190,7 @@ export const AuthService = {
       expiresAt,
     });
 
-    const resetLink = `${EnvConfig.frontendHost}/verify?email=${email}&token=${rawToken}`;
+    const resetLink = `${EnvConfig.frontendHost}/confirm?email=${email}&token=${rawToken}`;
     await MailService.sendConfirmSignupMail({
       email,
       name: existingUser.name,
