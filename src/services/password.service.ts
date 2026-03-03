@@ -37,7 +37,7 @@ export const PasswordService = {
       expiresAt,
     });
 
-    const resetLink = `${EnvConfig.frontendHost}/reset-password?email=${email}&token=${hashedToken}`;
+    const resetLink = `${EnvConfig.frontendHost}/password-reset?token=${hashedToken}`;
     await MailService.sendResetOTPMail({
       email,
       name: existingUser.name,

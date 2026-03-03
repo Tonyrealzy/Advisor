@@ -4,9 +4,9 @@ const options: swaggerJSDoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Next-Advisor API",
+      title: "Advisor API",
       version: "1.0.0",
-      description: "API documentation for Next-Advisor backend API service",
+      description: "API documentation for the Advisor backend API service",
     },
     servers: [
       {
