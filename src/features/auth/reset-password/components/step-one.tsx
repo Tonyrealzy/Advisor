@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/input-group";
-import { ArrowLeft, TrendingUp } from "lucide-react";
+import AppLogo from "@/components/ui/logo";
+import { useNavigateInApp } from "@/hooks/useNavigateInApp";
+import { ArrowLeft } from "lucide-react";
 
 const StepOne = () => {
+  const { navigateToLogin } = useNavigateInApp();
+
   return (
     <div className="w-full bg-secondary">
       <aside className="flex flex-col gap-2 md:gap-3 w-full items-center text-center">
-        <span className="flex items-center justify-center mb-2">
-          <TrendingUp className="h-6 md:h-8 w-6 md:w-8 text-blue mr-1 md:mr-2" />
-          <h1 className="text-xl md:text-2xl text-primary font-medium">
-            Advisor
-          </h1>
-        </span>
+        <AppLogo />
 
         <h1 className="text-xl md:text-2xl text-primary font-bold">
           Reset Password
@@ -30,7 +29,9 @@ const StepOne = () => {
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-center">
           <span className="flex items-center gap-1">
             <ArrowLeft className="h-4 w-4" />
-            <p className="text-grey cursor-pointer">Back to login </p>
+            <p className="text-grey cursor-pointer" onClick={navigateToLogin}>
+              Back to login
+            </p>
           </span>
         </aside>
       </form>

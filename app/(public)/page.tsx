@@ -1,8 +1,7 @@
+import LandingPage from "@/features/landing/Page";
 
 const Page = () => {
-  return (
-    <div>Page</div>
-  )
-}
+  return <LandingPage />;
+};
 
-export default Page
+export default Page;
