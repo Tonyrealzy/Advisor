@@ -3,6 +3,7 @@ export interface Recommendation {
   ticker: string;
   provider: string;
   brief_description: string;
+  currency?: string;
   expected_return: string;
   composition: number;
   principal: number;
@@ -11,4 +12,11 @@ export interface Recommendation {
 
 export interface AIFirstResponse {
   recommendations: Recommendation[];
+}
+
+export interface TableResponse {
+  id: number;
+  status?: string;
+  createdAt?: string;
+  data: AIFirstResponse;
 }

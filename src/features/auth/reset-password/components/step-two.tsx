@@ -1,16 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp } from "lucide-react";
+import AppLogo from "@/components/ui/logo";
+import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 
 const StepTwo = () => {
+  const { navigateToLogin } = useNavigateInApp();
+
   return (
     <div className="w-full bg-secondary">
       <aside className="flex flex-col gap-3 md:gap-5 w-full items-center text-center">
-        <span className="flex items-center justify-center mb-2">
-          <TrendingUp className="h-6 md:h-8 w-6 md:w-8 text-blue mr-1 md:mr-2" />
-          <h1 className="text-xl md:text-2xl text-primary font-medium">
-            Advisor
-          </h1>
-        </span>
+        <AppLogo />
 
         <h1 className="text-[27px] md:text-[32px] text-primary font-bold">
           Check your email
@@ -24,7 +22,9 @@ const StepTwo = () => {
 
       {/* Login form goes here */}
       <section className="flex flex-col gap-4 md:gap-6 py-4">
-        <Button className="mt-4">Back to login</Button>
+        <Button className="mt-4" onClick={navigateToLogin}>
+          Back to login
+        </Button>
 
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-center">
           <span className="flex items-center gap-1 text-grey">

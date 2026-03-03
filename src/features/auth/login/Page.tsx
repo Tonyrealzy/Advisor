@@ -2,18 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import { InputField, PasswordInputField } from "@/components/ui/input-group";
-import { TrendingUp } from "lucide-react";
+import AppLogo from "@/components/ui/logo";
+import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 
 const LoginPage = () => {
+    const { navigateToSignup, navigateToResetPassword } = useNavigateInApp();
+  
   return (
     <div className="w-full bg-secondary">
       <aside className="flex flex-col gap-2 md:gap-3 w-full items-center text-center">
-        <span className="flex items-center justify-center mb-2">
-          <TrendingUp className="h-6 md:h-8 w-6 md:w-8 text-blue mr-1 md:mr-2" />
-          <h1 className="text-xl md:text-2xl text-primary font-medium">
-            Advisor
-          </h1>
-        </span>
+        <AppLogo />
 
         <h1 className="text-xl md:text-2xl text-primary font-bold">
           Welcome back
@@ -39,10 +37,14 @@ const LoginPage = () => {
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-between">
           <span className="flex items-center gap-1">
             <p className="text-grey">Don't have an account? </p>
-            <p className="cursor-pointer text-blue">Sign up</p>
+            <p className="cursor-pointer text-blue" onClick={navigateToSignup}>
+              Sign up
+            </p>
           </span>
 
-          <p className="text-blue cursor-pointer underline">Forgot Password?</p>
+          <p className="text-blue cursor-pointer underline" onClick={navigateToResetPassword}>
+            Forgot Password?
+          </p>
         </aside>
       </form>
     </div>

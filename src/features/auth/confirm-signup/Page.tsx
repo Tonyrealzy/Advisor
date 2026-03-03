@@ -1,17 +1,12 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
+import AppLogo from "@/components/ui/logo";
 
 const ConfirmSignupPage = () => {
   return (
     <div className="w-full bg-secondary">
       <aside className="flex flex-col gap-3 md:gap-4 w-full items-center text-center">
-        <span className="flex items-center justify-center mb-2">
-          <TrendingUp className="h-6 md:h-8 w-6 md:w-8 text-blue mr-1 md:mr-2" />
-          <h1 className="text-xl md:text-2xl text-primary font-medium">
-            Advisor
-          </h1>
-        </span>
+        <AppLogo />
       </aside>
 
       <section>

@@ -16,6 +16,7 @@ export const AIService = {
         🔸 The top-level key must be "recommendations".
         🔸 Each recommendation must contain the following keys in order:
         - "financial_product": string
+        - "currency": string
         - "ticker": string
         - "provider": string
         - "brief_description": string
