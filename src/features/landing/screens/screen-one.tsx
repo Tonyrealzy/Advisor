@@ -6,7 +6,7 @@ const ScreenOne = () => {
   const { navigateToLogin, navigateToSignup } = useNavigateInApp();
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-32 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6 max-w-4xl mx-auto">
           Smart Investment Recommendations, Tailored for You

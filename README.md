@@ -41,7 +41,7 @@ pnpm dev
 # or use npm/yarn/bun as preferred
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+Open [http://localhost:3002](http://localhost:3002) in your browser to view the app.
 
 ## Environment Variables
 

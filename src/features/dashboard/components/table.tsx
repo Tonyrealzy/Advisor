@@ -9,17 +9,22 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { mockRecommendations } from "./page-data";
+import { mockRecommendations } from "../page-data";
 import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatDateTime, getStatusColor } from "@/utilities/helper";
 import { Badge } from "@/components/ui/badge";
+import { useNavigateInApp } from "@/hooks/useNavigateInApp";
+import ScrollButtons from "@/components/ui/scroll-buttons";
 
 const ResponseTable = () => {
+  const { navigateToTableRowView } = useNavigateInApp();
+
   return (
     <Card>
       <CardHeader>
@@ -34,19 +39,20 @@ const ResponseTable = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>ID</TableHead>
+                <TableHead>S/N</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Created At</TableHead>
                 <TableHead>Data Summary</TableHead>
                 <TableHead className="text-center">Action</TableHead>
               </TableRow>
             </TableHeader>
+
             <TableBody>
               {mockRecommendations.length > 0 ? (
-                mockRecommendations.map((recommendation) => (
+                mockRecommendations.map((recommendation, index) => (
                   <TableRow key={recommendation.id}>
                     <TableCell className="font-mono text-sm">
-                      {recommendation.id}
+                      {index + 1}
                     </TableCell>
                     <TableCell>
                       <Badge className={getStatusColor(recommendation.status)}>
@@ -77,9 +83,8 @@ const ResponseTable = () => {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={
-                          () => {}
-                          // navigate(`/dashboard/recommendation/${recommendation.id}`)
+                        onClick={() =>
+                          navigateToTableRowView(recommendation.id)
                         }
                       >
                         <Eye className="h-4 w-4" />
@@ -100,6 +105,21 @@ const ResponseTable = () => {
                 </TableRow>
               )}
             </TableBody>
+
+            <TableFooter>
+              <TableRow>
+                <TableCell colSpan={4} className="h-12"></TableCell>
+                <TableCell>
+                  {/* Fix this on fetching API data with pagination */}
+                  <ScrollButtons
+                    previousPage={() => {}}
+                    nextPage={() => {}}
+                    page={1}
+                    hasNextPage={false}
+                  />
+                </TableCell>
+              </TableRow>
+            </TableFooter>
           </Table>
         </div>
       </CardContent>
