@@ -12,7 +12,7 @@ const DashboardDetailPage = () => {
   const response = mockRecommendations.find((rec) => rec.id === Number(id)) as TableResponse;
 
   return (
-    <div className="p-4 md:p-6 space-y-6 max-w-6xl mx-auto">
+    <div className="p-4 md:px-6 space-y-6 max-w-6xl mx-auto">
       <RecommendationView {...response} />
     </div>
   );

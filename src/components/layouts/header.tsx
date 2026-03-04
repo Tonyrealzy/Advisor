@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
               <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white">
                 {profileData?.name?.charAt(0).toUpperCase() || "U"}
               </div>
-              <span className="hidden sm:inline">{profileData?.name}</span>
+              <span className="hidden sm:inline">{profileData?.name ? profileData?.name.toUpperCase() : "USER"}</span>
             </Button>
           </DropdownMenuTrigger>
 
