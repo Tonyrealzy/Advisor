@@ -49,3 +49,4 @@ export const actionSteps = [
     description: "Access all your recommendations anytime from your dashboard.",
   },
 ];
+

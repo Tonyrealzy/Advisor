@@ -20,6 +20,7 @@ export const AIService = {
         - "ticker": string
         - "provider": string
         - "brief_description": string
+        - "analysis": string (1-2 sentences explaining why this product is suitable for me based on my profile)
         - "expected_return": a percentage as a string (e.g., "7%")
         - "principal": an integer amount from my total capital
         - "estimated_return_value": an integer computed as (expected_return × principal)
@@ -46,7 +47,7 @@ export const AIService = {
     await createAIResponse({
       userId,
       status,
-      query: formattedResponse,
+      query: req,
       data: formattedResponse,
       createdAt: new Date(),
     });

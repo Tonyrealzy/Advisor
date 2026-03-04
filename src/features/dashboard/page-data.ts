@@ -4,6 +4,16 @@ export const mockRecommendations: TableResponse[] = [
   {
     id: 1,
     status: "COMPLETED",
+    query: {
+      age: 30,
+      amount: 10000,
+      currency: "USD",
+      location: "Lagos",
+      riskTolerance: "medium",
+      investmentHorizon: 10,
+      investmentPurpose: "Retirement savings",
+      investmentKnowledge: "beginner",
+    },
     data: {
       recommendations: [
         {
@@ -16,6 +26,8 @@ export const mockRecommendations: TableResponse[] = [
             "Tracks the performance of the S&P 500 Index, representing 500 of the largest U.S. companies. Offers broad exposure to the U.S. stock market, suitable for long-term growth.",
           financial_product: "Vanguard S&P 500 ETF",
           estimated_return_value: 240,
+          analysis: "Strong historical performance, low expense ratio, ideal for long-term growth.",
+          currency: "USD",
         },
         {
           ticker: "VXUS",
@@ -27,6 +39,8 @@ export const mockRecommendations: TableResponse[] = [
             "Invests in stocks of companies located outside the United States, providing diversified exposure to developed and emerging international markets to reduce country-specific risk.",
           financial_product: "Vanguard Total International Stock ETF",
           estimated_return_value: 140,
+          analysis: "Diversifies internationally, reduces U.S.-specific risk, moderate volatility.",
+          currency: "USD",
         },
         {
           ticker: "BND",
@@ -38,6 +52,8 @@ export const mockRecommendations: TableResponse[] = [
             "Seeks to track the performance of a broad, market-weighted bond index. Provides diversified exposure to the U.S. investment-grade bond market for stability and income.",
           financial_product: "Vanguard Total Bond Market ETF",
           estimated_return_value: 60,
+          analysis: "Provides stability and income, suitable for conservative investors.",
+          currency: "USD",
         },
         {
           ticker: "VIG",
@@ -49,6 +65,8 @@ export const mockRecommendations: TableResponse[] = [
             "Invests in U.S. companies that have a history of increasing dividends over time. Focuses on quality companies with stable earnings, potentially offering less volatility.",
           financial_product: "Vanguard Dividend Appreciation ETF",
           estimated_return_value: 140,
+          analysis: "Focuses on dividend growers, less volatile than broad market ETFs.",
+          currency: "USD",
         },
         {
           ticker: "VNQ",
@@ -60,6 +78,8 @@ export const mockRecommendations: TableResponse[] = [
             "Invests in real estate investment trusts (REITs) that hold properties across various sectors. Offers exposure to the real estate market for diversification and income.",
           financial_product: "Vanguard Real Estate ETF",
           estimated_return_value: 60,
+          analysis: "Offers real estate exposure, diversifies portfolio, moderate risk.",
+          currency: "USD",
         },
       ],
     },
@@ -68,6 +88,16 @@ export const mockRecommendations: TableResponse[] = [
   {
     id: 2,
     status: "COMPLETED",
+    query: {
+      age: 30,
+      amount: 10000,
+      currency: "USD",
+      location: "Lagos",
+      riskTolerance: "medium",
+      investmentHorizon: 10,
+      investmentPurpose: "Retirement savings",
+      investmentKnowledge: "beginner",
+    },
     data: {
       recommendations: [
         {
@@ -80,6 +110,8 @@ export const mockRecommendations: TableResponse[] = [
             "Tracks the S&P 500 Index, providing exposure to large-cap U.S. equities. Suitable for investors seeking broad market exposure.",
           financial_product: "SPDR S&P 500 ETF Trust",
           estimated_return_value: 188,
+          analysis: "Broad U.S. market exposure, highly liquid, suitable for core holdings.",
+          currency: "USD",
         },
         {
           ticker: "EFA",
@@ -91,6 +123,8 @@ export const mockRecommendations: TableResponse[] = [
             "Provides access to large- and mid-cap companies in developed markets outside the U.S. and Canada.",
           financial_product: "iShares MSCI EAFE ETF",
           estimated_return_value: 130,
+          analysis: "Developed markets diversification, reduces reliance on U.S. equities.",
+          currency: "USD",
         },
         {
           ticker: "AGG",
@@ -102,6 +136,8 @@ export const mockRecommendations: TableResponse[] = [
             "Tracks the total U.S. investment-grade bond market, offering diversification and income.",
           financial_product: "iShares Core U.S. Aggregate Bond ETF",
           estimated_return_value: 64,
+          analysis: "Stable income, low risk, complements equity holdings.",
+          currency: "USD",
         },
         {
           ticker: "SCHD",
@@ -113,6 +149,8 @@ export const mockRecommendations: TableResponse[] = [
             "Focuses on high dividend yielding U.S. stocks with a record of consistently paying dividends.",
           financial_product: "Schwab U.S. Dividend Equity ETF",
           estimated_return_value: 136,
+          analysis: "Focuses on high dividend stocks, good for income-seeking investors.",
+          currency: "USD",
         },
         {
           ticker: "VNQI",
@@ -124,6 +162,8 @@ export const mockRecommendations: TableResponse[] = [
             "Invests in international real estate investment trusts, providing global property exposure.",
           financial_product: "Vanguard Global ex-U.S. Real Estate ETF",
           estimated_return_value: 55,
+          analysis: "Global real estate exposure, adds diversification, moderate risk.",
+          currency: "USD",
         },
       ],
     },
@@ -132,6 +172,16 @@ export const mockRecommendations: TableResponse[] = [
   {
     id: 3,
     status: "COMPLETED",
+    query: {
+      age: 30,
+      amount: 10000,
+      currency: "USD",
+      location: "Lagos",
+      riskTolerance: "medium",
+      investmentHorizon: 10,
+      investmentPurpose: "Retirement savings",
+      investmentKnowledge: "beginner",
+    },
     data: {
       recommendations: [
         {
@@ -144,6 +194,8 @@ export const mockRecommendations: TableResponse[] = [
             "Tracks the Nasdaq-100 Index, providing exposure to the largest non-financial companies listed on Nasdaq.",
           financial_product: "Invesco QQQ Trust",
           estimated_return_value: 315,
+          analysis: "Tech-heavy, high growth potential, higher volatility.",
+          currency: "USD",
         },
         {
           ticker: "VEA",
@@ -155,6 +207,8 @@ export const mockRecommendations: TableResponse[] = [
             "Provides exposure to stocks in developed markets outside of the U.S. and Canada.",
           financial_product: "Vanguard FTSE Developed Markets ETF",
           estimated_return_value: 90,
+          analysis: "Developed markets outside U.S., reduces home bias.",
+          currency: "USD",
         },
         {
           ticker: "LQD",
@@ -167,6 +221,8 @@ export const mockRecommendations: TableResponse[] = [
           financial_product:
             "iShares iBoxx $ Investment Grade Corporate Bond ETF",
           estimated_return_value: 80,
+          analysis: "Corporate bonds, higher yield than government bonds, moderate risk.",
+          currency: "USD",
         },
         {
           ticker: "DVY",
@@ -178,6 +234,8 @@ export const mockRecommendations: TableResponse[] = [
             "Focuses on high dividend yielding U.S. companies, providing income and potential growth.",
           financial_product: "iShares Select Dividend ETF",
           estimated_return_value: 124,
+          analysis: "High dividend yield, suitable for income-focused portfolios.",
+          currency: "USD",
         },
         {
           ticker: "REM",
@@ -189,6 +247,8 @@ export const mockRecommendations: TableResponse[] = [
             "Invests in U.S. real estate companies and REITs, offering exposure to the real estate sector.",
           financial_product: "iShares Mortgage Real Estate ETF",
           estimated_return_value: 58,
+          analysis: "Real estate sector exposure, moderate income, sector-specific risk.",
+          currency: "USD",
         },
       ],
     },

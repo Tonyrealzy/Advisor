@@ -13,7 +13,10 @@ export const useNavigateInApp = () => {
 
   // Logged-in Routes
   const navigateToDashboard = () => router.replace("/dashboard");
-  const navigateToNewInquiry = () => router.replace("/dashboard/new");
+  const navigateToTableRowView = (id: number) =>
+    router.replace(`/dashboard/recommendations/${id}`);
+  const navigateToNewInquiry = () =>
+    router.replace("/dashboard/recommendations/new");
 
   return {
     navigateToHome,
@@ -24,5 +27,6 @@ export const useNavigateInApp = () => {
     navigateToPasswordReset,
     navigateToDashboard,
     navigateToNewInquiry,
+    navigateToTableRowView
   };
 };

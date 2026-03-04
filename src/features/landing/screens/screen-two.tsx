@@ -15,7 +15,7 @@ const ScreenTwo = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {recommendations.map((feature, index) => (
-            <Card key={index}>
+            <Card key={index} className="cursor-pointer">
               <CardHeader>
                 <div className="mb-4">{feature.icon}</div>
                 <CardTitle>{feature.title}</CardTitle>

@@ -40,7 +40,8 @@ export function transformResponse(r: any) {
   return {
     id: r.id,
     status: r.status,
-    data: r.query,
+    query: r.query,
+    data: r.data,
     createdAt: r.createdAt,
   }
 }

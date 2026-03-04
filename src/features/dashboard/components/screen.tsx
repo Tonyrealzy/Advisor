@@ -6,20 +6,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FileText } from "lucide-react";
-import { mockRecommendations } from "./page-data";
+import { mockRecommendations } from "../page-data";
+import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 
 const TopScreen = () => {
+  const { navigateToNewInquiry } = useNavigateInApp();
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4">
         <aside>
-          <h1 className="text-3xl font-semibold mb-2">Investment Recommendations</h1>
+          <h1 className="text-3xl font-semibold mb-2">
+            Investment Recommendations
+          </h1>
           <p className="text-gray-600">
             View and manage your personalized investment recommendations
           </p>
         </aside>
 
-        <Button className="w-full md:w-32" onClick={() => {}}>
+        <Button className="w-full md:w-32" onClick={navigateToNewInquiry}>
           <FileText className="mr-2 h-4 w-4" />
           New Inquiry
         </Button>
