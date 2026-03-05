@@ -9,7 +9,7 @@ import InquiryForm from "./components/Form";
 const DashboardNewPage = () => {
   const { navigateToDashboard } = useNavigateInApp();
   return (
-    <div className="p-4 lg:p-6 space-y-6 max-w-6xl mx-auto">
+    <div className="p-4 md:p-6 space-y-6 max-w-6xl mx-auto">
       {/* Header */}
       <div className="w-full">
         <Button variant="ghost" onClick={navigateToDashboard} className="mb-4">

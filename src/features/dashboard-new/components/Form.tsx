@@ -23,12 +23,19 @@ import {
 } from "./form-data";
 import { Button } from "@/components/ui/button";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
+import { useInteractWithAI } from "@/hooks/ai/useInteractWithAI";
+import GlobalLoader from "@/components/loaders/loading";
 
 const InquiryForm = () => {
   const { navigateToDashboard } = useNavigateInApp();
+  const { register, handleSubmit, errors, isLoading } = useInteractWithAI();
+
+  if (isLoading) {
+    return <GlobalLoader />;
+  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Card>
         <CardHeader>
           <CardTitle>Investment Profile</CardTitle>
@@ -45,6 +52,9 @@ const InquiryForm = () => {
               label="Age"
               placeholder="Enter your age"
               required
+              {...register("age")}
+              hasErrors={!!errors.age}
+              errorMessage={errors.age?.message}
             />
             <p className="text-sm text-gray-500">
               Your age helps us determine the appropriate investment horizon
@@ -57,7 +67,9 @@ const InquiryForm = () => {
               Location <span className="text-red-500">*</span>
             </Label>
             <Select
-            //   value={formData.location}
+              {...register("location")}
+              hasErrors={!!errors.location}
+              errorMessage={errors.location?.message}
             >
               <SelectTrigger id="location">
                 <SelectValue placeholder="Select your location" />
@@ -78,7 +90,9 @@ const InquiryForm = () => {
               Investment Knowledge <span className="text-red-500">*</span>
             </Label>
             <Select
-            //   value={formData.investmentKnowledge}
+              {...register("investmentKnowledge")}
+              hasErrors={!!errors.investmentKnowledge}
+              errorMessage={errors.investmentKnowledge?.message}
             >
               <SelectTrigger id="investmentKnowledge">
                 <SelectValue placeholder="Select your knowledge level" />
@@ -99,7 +113,9 @@ const InquiryForm = () => {
               Investment Purpose<span className="text-red-500">*</span>
             </Label>
             <Select
-            //   value={formData.investmentPurpose}
+              {...register("investmentPurpose")}
+              hasErrors={!!errors.investmentPurpose}
+              errorMessage={errors.investmentPurpose?.message}
             >
               <SelectTrigger id="investmentPurpose">
                 <SelectValue placeholder="Select your investment purpose" />
@@ -120,6 +136,9 @@ const InquiryForm = () => {
             label="Investment Horizon"
             placeholder="Enter your investment horizon (in years)"
             required
+            {...register("investmentHorizon")}
+            hasErrors={!!errors.investmentHorizon}
+            errorMessage={errors.investmentHorizon?.message}
           />
 
           {/* Risk Tolerance */}
@@ -128,7 +147,9 @@ const InquiryForm = () => {
               Risk Tolerance<span className="text-red-500">*</span>
             </Label>
             <Select
-            //   value={formData.riskTolerance}
+              {...register("riskTolerance")}
+              hasErrors={!!errors.riskTolerance}
+              errorMessage={errors.riskTolerance?.message}
             >
               <SelectTrigger id="riskTolerance">
                 <SelectValue placeholder="Select your risk tolerance" />
@@ -152,7 +173,9 @@ const InquiryForm = () => {
               Currency<span className="text-red-500">*</span>
             </Label>
             <Select
-            //   value={formData.currency}
+              {...register("currency")}
+              hasErrors={!!errors.currency}
+              errorMessage={errors.currency?.message}
             >
               <SelectTrigger id="currency">
                 <SelectValue placeholder="Select currency" />
@@ -174,6 +197,9 @@ const InquiryForm = () => {
               label="Investment Amount"
               placeholder="Enter your investment amount"
               required
+              {...register("amount")}
+              hasErrors={!!errors.amount}
+              errorMessage={errors.amount?.message}
             />
             <p className="text-sm text-gray-500">
               How much do you plan to invest?

@@ -12,6 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { useGetProfile } from "@/hooks/profile/useGetProfile";
+import { useLogout } from "@/hooks/auth/useLogin";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -19,7 +21,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
-  const {  navigateToResetPassword } = useNavigateInApp();
+  const { navigateToResetPassword } = useNavigateInApp();
+  const { profile } = useGetProfile();
+  const { handleLogout, isLoading } = useLogout();
+  console.log("Profile data in Header:", profile);
 
   return (
     <div className="sticky top-0 z-40 border-b bg-white p-1">
@@ -36,11 +41,25 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
         <div className="flex-1" />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="flex items-center gap-2">
-              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white">
-                {profileData?.name?.charAt(0).toUpperCase() || "U"}
-              </div>
-              <span className="hidden sm:inline">{profileData?.name ? profileData?.name.toUpperCase() : "USER"}</span>
+            <Button
+              variant="ghost"
+              className="flex items-center gap-2"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                "Logging out..."
+              ) : (
+                <>
+                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white">
+                    {profileData?.name?.charAt(0).toUpperCase() || "U"}
+                  </div>
+                  <span className="hidden sm:inline">
+                    {profileData?.name
+                      ? profileData?.name.toUpperCase()
+                      : "USER"}
+                  </span>
+                </>
+              )}
             </Button>
           </DropdownMenuTrigger>
 
@@ -61,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
               Change Password
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => {}}>
+            <DropdownMenuItem onClick={handleLogout}>
               <LogOut className="mr-2 h-4 w-4" />
               Log out
             </DropdownMenuItem>

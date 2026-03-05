@@ -4,11 +4,11 @@ import { useParams } from "next/navigation";
 import { TableResponse } from "@/models/response";
 import { mockRecommendations } from "../dashboard/page-data";
 import RecommendationView from "./components/recommendation-view";
-// import { useQueryClient } from "@tanstack/react-query";
+import { useGetAllRecommendations } from "@/hooks/ai/useGetAllRecommendations";
 
 const DashboardDetailPage = () => {
-  // const queryClient = useQueryClient();
   const { id } = useParams();
+  const {recommendations} = useGetAllRecommendations();
   const response = mockRecommendations.find((rec) => rec.id === Number(id)) as TableResponse;
 
   return (

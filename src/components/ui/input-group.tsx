@@ -7,6 +7,8 @@ interface InputGroupProps {
   label: string;
   placeholder?: string;
   required?: boolean;
+  hasErrors?: boolean;
+  errorMessage?: string;
 }
 
 interface PasswordInputGroupProps {
@@ -15,6 +17,8 @@ interface PasswordInputGroupProps {
   placeholder?: string;
   visible: boolean;
   required?: boolean;
+  hasErrors?: boolean;
+  errorMessage?: string;
   setVisible: (v: boolean) => void;
 }
 
@@ -23,6 +27,8 @@ export function InputField({
   label,
   placeholder,
   required,
+  hasErrors,
+  errorMessage,
 }: InputGroupProps) {
   return (
     <Field>
@@ -30,7 +36,13 @@ export function InputField({
         {label}
         {required && <span className="text-red-500">*</span>}
       </FieldLabel>
-      <Input id={id} type="text" placeholder={placeholder} />
+      <Input
+        id={id}
+        type="text"
+        placeholder={placeholder}
+        hasErrors={hasErrors}
+        errorMessage={errorMessage}
+      />
     </Field>
   );
 }
@@ -40,6 +52,8 @@ export function NumberInputField({
   label,
   placeholder,
   required,
+  hasErrors,
+  errorMessage,
 }: InputGroupProps) {
   return (
     <Field>
@@ -47,7 +61,13 @@ export function NumberInputField({
         {label}
         {required && <span className="text-red-500">*</span>}
       </FieldLabel>
-      <Input id={id} type="number" placeholder={placeholder} />
+      <Input
+        id={id}
+        type="number"
+        placeholder={placeholder}
+        hasErrors={hasErrors}
+        errorMessage={errorMessage}
+      />
     </Field>
   );
 }
@@ -59,6 +79,8 @@ export function PasswordInputField({
   visible,
   setVisible,
   required,
+  hasErrors,
+  errorMessage,
 }: PasswordInputGroupProps) {
   return (
     <Field>
@@ -71,6 +93,8 @@ export function PasswordInputField({
         placeholder={placeholder}
         visible={visible}
         setVisible={setVisible}
+        hasErrors={hasErrors}
+        errorMessage={errorMessage}
       />
     </Field>
   );

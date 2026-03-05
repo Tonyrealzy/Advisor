@@ -21,12 +21,15 @@ import { formatDateTime, getStatusColor } from "@/utilities/helper";
 import { Badge } from "@/components/ui/badge";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import ScrollButtons from "@/components/ui/scroll-buttons";
+import { useGetAllRecommendations } from "@/hooks/ai/useGetAllRecommendations";
 
 const ResponseTable = () => {
   const { navigateToTableRowView } = useNavigateInApp();
+  const { recommendations, isLoading, nextPage, previousPage, resetPage, hasNextPage, hasPreviousPage } = useGetAllRecommendations();
+  console.log("Recommendations in Table Component:", recommendations);
 
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>All Recommendations</CardTitle>
         <CardDescription>

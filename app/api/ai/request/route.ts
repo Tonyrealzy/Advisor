@@ -121,16 +121,19 @@ export async function POST(req: NextRequest) {
       amount,
       currency,
     } = validated.data;
-    const response = await AIService.getRecommendations({
-      age,
-      location,
-      investmentKnowledge,
-      investmentPurpose,
-      investmentHorizon,
-      riskTolerance,
-      amount,
-      currency,
-    }, userId);
+    const response = await AIService.getRecommendations(
+      {
+        age,
+        location,
+        investmentKnowledge,
+        investmentPurpose,
+        investmentHorizon,
+        riskTolerance,
+        amount,
+        currency,
+      },
+      userId,
+    );
     return NextResponse.json({
       success: true,
       response,

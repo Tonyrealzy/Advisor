@@ -13,7 +13,7 @@ const TopScreen = () => {
   const { navigateToNewInquiry } = useNavigateInApp();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-full">
       <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4">
         <aside>
           <h1 className="text-3xl font-semibold mb-2">
@@ -34,7 +34,7 @@ const TopScreen = () => {
       <div className="grid gap-4 md:grid-cols-3">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Recommendations</CardDescription>
+            <CardDescription className="text-xs lg:text-sm flex-wrap">Total Recommendations</CardDescription>
             <CardTitle className="text-3xl">
               {mockRecommendations.length}
             </CardTitle>
@@ -43,7 +43,7 @@ const TopScreen = () => {
 
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Completed</CardDescription>
+            <CardDescription className="text-xs lg:text-sm">Completed</CardDescription>
             <CardTitle className="text-3xl">
               {
                 mockRecommendations.filter((r) => r.status === "COMPLETED")
@@ -55,7 +55,7 @@ const TopScreen = () => {
 
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>In Progress</CardDescription>
+            <CardDescription className="text-xs lg:text-sm">In Progress</CardDescription>
             <CardTitle className="text-3xl">
               {mockRecommendations.filter((r) => r.status === "PENDING").length}
             </CardTitle>

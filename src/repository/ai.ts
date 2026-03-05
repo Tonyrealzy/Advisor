@@ -33,7 +33,7 @@ export async function getAllAIResponses(
     throw new AppError("No AI responses found");
   }
 
-  return responses.map(transformResponse);
+  return {response: responses.map(transformResponse), pagination: { page, limit, totalPages: Math.ceil(responses.length / limit) }};
 }
 
 export async function createAIResponse(data: CreateAIRecord) {
@@ -43,33 +43,6 @@ export async function createAIResponse(data: CreateAIRecord) {
   if (!response) {
     logger.error("Failed to create AI response");
     throw new AppError("Failed to create AI response");
-  }
-
-  return response;
-}
-
-export async function getResponsesByDateRange(
-  userId: string,
-  from: Date,
-  to: Date,
-  page: number = 1,
-  limit: number = 10,
-) {
-  const response = await prisma.aIPersistedResponse.findMany({
-    where: {
-      userId,
-      createdAt: {
-        gte: from,
-        lte: to,
-      },
-    },
-    skip: (page - 1) * limit,
-    take: limit,
-    orderBy: { createdAt: "desc" },
-  });
-  if (!response) {
-    logger.error("No AI responses found for the specified date range");
-    throw new AppError("No AI responses found for the specified date range");
   }
 
   return response;

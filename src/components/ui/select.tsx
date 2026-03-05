@@ -4,10 +4,23 @@ import { Select as SelectPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
-function Select({
-  ...props
-}: React.ComponentProps<typeof SelectPrimitive.Root>) {
-  return <SelectPrimitive.Root data-slot="select" {...props} />
+interface SelectInputProps
+  extends React.ComponentProps<typeof SelectPrimitive.Root> {
+  hasErrors?: boolean;
+  errorMessage?: string;
+}
+
+function Select({ hasErrors, errorMessage, ...props }: SelectInputProps) {
+  return (
+    <div className="w-full flex flex-col">
+      <SelectPrimitive.Root data-slot="select" {...props} />
+      {hasErrors && errorMessage && (
+        <p className="text-destructive text-[8px] lg:text-[10px] pt-px font-light text-start wrap-break-word">
+          {errorMessage}
+        </p>
+      )}
+    </div>
+  );
 }
 
 function SelectGroup({
