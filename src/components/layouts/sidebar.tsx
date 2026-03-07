@@ -2,9 +2,10 @@
 
 import AppLogo from "../ui/logo";
 import { navigation } from "./data";
-import { Sheet, SheetContent } from "../ui/sheet";
+import { Sheet, SheetContent, SheetTitle } from "../ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -19,7 +20,10 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => {
       {/* Mobile sidebar */}
       <div className="flex md:hidden">
         <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-          <SheetContent side="left" className="w-64 md:w-0 md:hidden p-0">
+          <SheetContent side="left" aria-describedby={undefined} className="w-64 md:w-0 md:hidden p-0">
+            <VisuallyHidden>
+              <SheetTitle>Navigation Menu</SheetTitle>
+            </VisuallyHidden>
             <div className="flex flex-col h-full">
               <div className="p-6 w-full flex justify-start border-b">
                 <AppLogo />

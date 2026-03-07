@@ -5,13 +5,13 @@ import StepOne from "./components/step-one";
 import StepTwo from "./components/step-two";
 
 const ResetPasswordPage = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+ const [isSubmitted, setIsSubmitted] = useState(false);
 
   if (isSubmitted) {
     return <StepTwo />;
+  } else {
+    return <StepOne setIsSubmitted={setIsSubmitted} />;
   }
-
-  return <StepOne />;
 };
 
 export default ResetPasswordPage;

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
+import { ToastContainer } from "react-toastify";
+import DevtoolGuard from "./providers/DevtoolGuard";
+import { GlobalErrorProvider } from "@/components/errors/GlobalErrorProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Advisor",
-  description: "Advisor- for investment recommendations and portfolio management.",
+  description:
+    "Advisor- for investment recommendations and portfolio management.",
 };
 
 export default function RootLayout({
@@ -27,7 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        <Providers>
+          <GlobalErrorProvider>
+            <DevtoolGuard />
+            {children}
+          </GlobalErrorProvider>
+        </Providers>
       </body>
     </html>
   );

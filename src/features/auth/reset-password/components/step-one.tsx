@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/input-group";
 import AppLogo from "@/components/ui/logo";
+import { useResetPassword } from "@/hooks/auth/useResetPassword";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import { ArrowLeft } from "lucide-react";
 
-const StepOne = () => {
+type StepOneProps = {
+  setIsSubmitted: (value: boolean) => void;
+};
+const StepOne = ({ setIsSubmitted }: StepOneProps) => {
   const { navigateToLogin } = useNavigateInApp();
+  const { register, handleSubmit, errors, isLoading } = useResetPassword({ setIsSubmitted });
 
   return (
     <div className="w-full bg-secondary">
@@ -21,10 +26,22 @@ const StepOne = () => {
       </aside>
 
       {/* Login form goes here */}
-      <form className="flex flex-col gap-4 md:gap-6 py-4">
-        <InputField id="email" label="Email" placeholder="Enter your email" />
+      <form
+        className="flex flex-col gap-4 md:gap-6 py-4"
+        onSubmit={handleSubmit}
+      >
+        <InputField
+          id="email"
+          label="Email"
+          placeholder="Enter your email"
+          {...register("email")}
+          errorMessage={errors.email?.message}
+          hasErrors={!!errors.email}
+        />
 
-        <Button className="mt-2">Send reset link</Button>
+        <Button className="mt-2" loading={isLoading} type="submit">
+          Send reset link
+        </Button>
 
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-center">
           <span className="flex items-center gap-1">

@@ -1,10 +1,22 @@
+import { storage } from "@/lib/session";
 import { useRouter } from "next/navigation";
 
 export const useNavigateInApp = () => {
   const router = useRouter();
+  const token = storage.getToken();
+  const isAuthenticated = !!token;
 
   // AuthRoutes
-  const navigateToHome = () => router.replace("/");
+  const navigateToHome = () => {
+    router.replace("/");
+  };
+  const navigateToHomeWithCondition = () => {
+    if (isAuthenticated) {
+      router.replace("/dashboard");
+    } else {
+      router.replace("/");
+    }
+  };
   const navigateToLogin = () => router.replace("/login");
   const navigateToSignup = () => router.replace("/signup");
   const navigateToConfirmSignup = () => router.replace("/confirm");
@@ -20,6 +32,7 @@ export const useNavigateInApp = () => {
 
   return {
     navigateToHome,
+    navigateToHomeWithCondition,
     navigateToLogin,
     navigateToSignup,
     navigateToConfirmSignup,
@@ -27,6 +40,6 @@ export const useNavigateInApp = () => {
     navigateToPasswordReset,
     navigateToDashboard,
     navigateToNewInquiry,
-    navigateToTableRowView
+    navigateToTableRowView,
   };
 };

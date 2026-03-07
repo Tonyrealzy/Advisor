@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
 import { EnvConfig } from "@/config/env";
+import logger from "@/utilities/logger";
 
 const JWT_SECRET = EnvConfig.jwtSecret!;
 
@@ -19,7 +20,7 @@ export async function requireAuth(
     // attach payload to request if needed
     return { success: true, payload };
   } catch (err) {
-    console.log(err);
+    logger.error(err);
     return { success: false, payload: null };
   }
 }

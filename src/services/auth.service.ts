@@ -31,7 +31,7 @@ export const AuthService = {
   login: async (email: string, password: string) => {
     const existingUser = await getUserByEmail(email);
 
-    const userExists = comparePassword(password, existingUser.password);
+    const userExists = await comparePassword(password, existingUser.password);
     if (!userExists) {
       throw new Error("Invalid credentials");
     }
@@ -127,10 +127,11 @@ export const AuthService = {
       token,
     });
 
+    const resetLink = `${EnvConfig.frontendHost}/confirm?email=${data.email}&token=${token}`;
     await MailService.sendConfirmSignupMail({
       name: data.userName,
       email: data.email,
-      resetLink: `${EnvConfig.frontendHost}/confirm?email=${data.email}&token=${token}`,
+      resetLink,
     });
     logger.error("Token generated for email verification: " + token);
 
@@ -142,7 +143,12 @@ export const AuthService = {
       isActive: newUser.isActive,
     };
 
-    return userData;
+    return {
+      userData,
+      resetLink,
+      message:
+        "Signup successful. Please check your email to confirm your account.",
+    };
   },
 
   confirmSignup: async (email: string, token: string) => {

@@ -14,19 +14,20 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { mockRecommendations } from "../page-data";
 import { Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatDateTime, getStatusColor } from "@/utilities/helper";
 import { Badge } from "@/components/ui/badge";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import ScrollButtons from "@/components/ui/scroll-buttons";
+import { useGetAllRecommendations } from "@/hooks/ai/useGetAllRecommendations";
 
 const ResponseTable = () => {
   const { navigateToTableRowView } = useNavigateInApp();
+  const { recommendations, nextPage, previousPage, hasNextPage } = useGetAllRecommendations();
 
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>All Recommendations</CardTitle>
         <CardDescription>
@@ -48,8 +49,8 @@ const ResponseTable = () => {
             </TableHeader>
 
             <TableBody>
-              {mockRecommendations.length > 0 ? (
-                mockRecommendations.map((recommendation, index) => (
+              {recommendations && recommendations.length > 0 ? (
+                recommendations.map((recommendation, index) => (
                   <TableRow key={recommendation.id}>
                     <TableCell className="font-mono text-sm">
                       {index + 1}
@@ -112,10 +113,10 @@ const ResponseTable = () => {
                 <TableCell>
                   {/* Fix this on fetching API data with pagination */}
                   <ScrollButtons
-                    previousPage={() => {}}
-                    nextPage={() => {}}
+                    previousPage={previousPage}
+                    nextPage={nextPage}
                     page={1}
-                    hasNextPage={false}
+                    hasNextPage={hasNextPage}
                   />
                 </TableCell>
               </TableRow>

@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     const response = await PasswordService.resetPassword(email);
     return NextResponse.json({
       success: true,
-      message: response,
+      response,
     });
   } catch (error: any) {
     return NextResponse.json(

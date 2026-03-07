@@ -10,7 +10,7 @@ import crypto from "crypto";
 import { getUserByEmail, getUserById } from "@/repository/user";
 import { MailService } from "./mail.service";
 import { EnvConfig } from "@/config/env";
-import { generateToken, hashPassword } from "@/utilities/hash";
+import { comparePassword, generateToken, hashPassword } from "@/utilities/hash";
 import logger from "@/utilities/logger";
 
 export const PasswordService = {
@@ -45,13 +45,20 @@ export const PasswordService = {
     });
     logger.info(`Token sent ${hashedToken}`);
 
-    return { message: "Password reset email sent successfully" };
+    return { message: "Password reset email sent successfully", resetLink };
   },
 
   changePassword: async (token: string, password: string) => {
     const passwordReset = await getPasswordResetByToken(token);
 
-    const user = await getUserById(passwordReset.userId);
+    const existingUser = await getUserById(passwordReset.userId);
+    
+    const userExists = await comparePassword(password, existingUser.password);
+    if (userExists) {
+      throw new Error(
+        "Please choose a different password from any of your previously used passwords.",
+      );
+    }
     const hashedPassword = await hashPassword(password);
 
     await updateUserPassword(passwordReset.userId, hashedPassword);

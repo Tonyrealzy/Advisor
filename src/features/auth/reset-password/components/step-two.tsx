@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import AppLogo from "@/components/ui/logo";
+import { useResetPassword } from "@/hooks/auth/useResetPassword";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
+import { storage } from "@/lib/session";
 
 const StepTwo = () => {
+  const email = storage.getEmail();
+
   const { navigateToLogin } = useNavigateInApp();
+  const { handleLinkResend: handleSubmit, resendLoading: isLoading } =
+    useResetPassword({ setIsSubmitted: () => {} });
 
   return (
     <div className="w-full bg-secondary">
@@ -29,7 +35,14 @@ const StepTwo = () => {
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-center">
           <span className="flex items-center gap-1 text-grey">
             <p>Didn't receive the email? </p>
-            <p className="text-blue cursor-pointer underline">Resend</p>
+            <Button
+              className="text-blue cursor-pointer underline w-fit pl-0"
+              disabled={isLoading}
+              variant="link"
+              onClick={() => handleSubmit({ email: email || "" })}
+            >
+              {isLoading ? "Resending" : "Resend"}
+            </Button>
           </span>
         </aside>
       </section>

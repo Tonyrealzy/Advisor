@@ -44,7 +44,7 @@ export const AIService = {
     const formattedResponse = formatResponse(response);
     const status = "COMPLETED";
 
-    await createAIResponse({
+    const data = await createAIResponse({
       userId,
       status,
       query: req,
@@ -52,7 +52,11 @@ export const AIService = {
       createdAt: new Date(),
     });
 
-    return formattedResponse;
+    return {
+      message: "Recommendations generated successfully",
+      data: formattedResponse,
+      id: data.id,
+    };
   },
 
   getStoredResponses: async (
@@ -61,11 +65,12 @@ export const AIService = {
     from?: Date,
     to?: Date,
   ) => {
-    const response = await getAllAIResponses(userId, pagination, from, to);
+    const { response, pagination: responsePagination } =
+      await getAllAIResponses(userId, pagination, from, to);
     return {
       message: "Responses retrieved successfully",
       data: response,
-      pagination,
+      pagination: responsePagination,
     };
   },
 };

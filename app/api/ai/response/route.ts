@@ -24,6 +24,18 @@
  *           maximum: 100
  *         required: false
  *         description: Number of items per page
+ *       - in: query
+ *         name: from
+ *         schema:
+ *           type: string
+ *           format: date-time
+ *         description: Start Date
+ *       - in: query
+ *         name: to
+ *         schema:
+ *           type: string
+ *           format: date-time
+ *         description: End Date
  *     responses:
  *       200:
  *         description: Successfully retrieved stored responses

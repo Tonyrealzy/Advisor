@@ -8,12 +8,14 @@ import {
 import { FileText } from "lucide-react";
 import { mockRecommendations } from "../page-data";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
+import { useGetAllRecommendations } from "@/hooks/ai/useGetAllRecommendations";
 
 const TopScreen = () => {
   const { navigateToNewInquiry } = useNavigateInApp();
+  const { recommendations } = useGetAllRecommendations();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-full">
       <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4">
         <aside>
           <h1 className="text-3xl font-semibold mb-2">
@@ -31,37 +33,45 @@ const TopScreen = () => {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid gap-4 md:grid-cols-3">
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>Total Recommendations</CardDescription>
-            <CardTitle className="text-3xl">
-              {mockRecommendations.length}
-            </CardTitle>
-          </CardHeader>
-        </Card>
+      {recommendations && (
+        <div className="grid gap-4 md:grid-cols-3">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription className="text-xs lg:text-sm flex-wrap">
+                Total Recommendations
+              </CardDescription>
+              <CardTitle className="text-3xl">
+                {recommendations.length}
+              </CardTitle>
+            </CardHeader>
+          </Card>
 
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>Completed</CardDescription>
-            <CardTitle className="text-3xl">
-              {
-                mockRecommendations.filter((r) => r.status === "COMPLETED")
-                  .length
-              }
-            </CardTitle>
-          </CardHeader>
-        </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription className="text-xs lg:text-sm">
+                Completed
+              </CardDescription>
+              <CardTitle className="text-3xl">
+                {recommendations.filter((r) => r.status === "COMPLETED").length}
+              </CardTitle>
+            </CardHeader>
+          </Card>
 
-        <Card>
-          <CardHeader className="pb-3">
-            <CardDescription>In Progress</CardDescription>
-            <CardTitle className="text-3xl">
-              {mockRecommendations.filter((r) => r.status === "PENDING").length}
-            </CardTitle>
-          </CardHeader>
-        </Card>
-      </div>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardDescription className="text-xs lg:text-sm">
+                In Progress
+              </CardDescription>
+              <CardTitle className="text-3xl">
+                {
+                  mockRecommendations.filter((r) => r.status === "PENDING")
+                    .length
+                }
+              </CardTitle>
+            </CardHeader>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };
