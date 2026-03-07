@@ -577,3 +577,15 @@
 [2026-03-07 19:29:41] [ERROR] - [development]: jwt expired
 [2026-03-07 19:30:20] [INFO] - [development]: Found 6 AI responses for user
 [2026-03-07 19:30:33] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 19:31:51] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:31:51] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:31:52] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:32:04] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:32:05] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:32:09] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:32:10] [ERROR] - [development]: jwt must be provided
+[2026-03-07 19:34:17] [ERROR] - [development]: jwt expired
+[2026-03-07 19:37:00] [ERROR] - [development]: Invalid credentials for email: umehobiarinze2@gmail.com
+[2026-03-07 19:37:07] [ERROR] - [development]: Invalid credentials for email: umehobiarinze2@gmail.com
+[2026-03-07 19:37:26] [ERROR] - [development]: Invalid credentials for email: umehobiarinze2@gmail.com
+[2026-03-07 19:37:44] [ERROR] - [development]: Invalid credentials for email: umehobiarinze2@gmail.com

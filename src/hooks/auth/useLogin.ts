@@ -40,6 +40,7 @@ export const useLogin = () => {
       const accessToken = data?.token;
       const user = data?.user;
       storage.setAuth(encryptData(accessToken), user);
+      toast.success(`Welcome back, ${data.user.firstName}!`);  
       navigateToDashboard();
       setLoading(false);
     },

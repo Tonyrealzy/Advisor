@@ -198,3 +198,48 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  --toastify-font-family: "Poppins", sans-serif;
+
+  /* LIGHT MODE COLORS */
+  --toastify-color-light: #155dfc; /* light toast background */
+  --toastify-color-dark: #000000; /* dark toast background */
+  --toastify-toast-background: #155dfc; /* yellow */
+  --toastify-text-color-light: #000000; /* black text */
+  --toastify-color-success: #000000;
+  --toastify-color-warning: #000000;
+  --toastify-color-error: #000000;
+  --toastify-icon-color-info: #000000;
+  --toastify-icon-color-success: #000000;
+  --toastify-icon-color-warning: #000000;
+  --toastify-icon-color-error: #000000;
+
+  /* Progress Bar */
+  --toastify-color-progress-light: #155dfc;
+
+  /* Layout */
+  --toastify-toast-width: 320px;
+  --toastify-toast-padding: 14px;
+  --toastify-toast-bd-radius: 16px;
+  --toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* DARK MODE OVERRIDES */
+.dark {
+  --toastify-color-light: #000000; /* light toast background */
+  --toastify-color-dark: #155dfc; /* dark toast background */
+  --toastify-toast-background: #000000; /* black */
+  --toastify-text-color-light: #155dfc; /* yellow text */
+  --toastify-color-error: #155dfc;
+  --toastify-color-success: #c6a600; /* deeper golden yellow */
+  --toastify-color-warning: #155dfc; /* standard yellow */
+
+  --toastify-icon-color-info: #155dfc;
+  --toastify-icon-color-success: #155dfc;
+  --toastify-icon-color-warning: #155dfc;
+  --toastify-icon-color-error: #155dfc;
+
+  /* Progress bar in dark mode */
+  --toastify-color-progress-dark: #155dfc;
+}
