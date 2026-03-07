@@ -55,6 +55,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
+      disabled={loading || props.disabled}
       data-variant={variant}
       data-size={size}
       className={cn(

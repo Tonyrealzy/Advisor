@@ -30,9 +30,9 @@ export const locationOptions = [
 ];
 
 export const knowledgeLevelOptions = [
-  { label: "Beginner - New to investing", value: "Beginner" },
-  { label: "Intermediate - Some experience", value: "Intermediate" },
-  { label: "Advanced - Experienced investor", value: "Advanced" },
+  { label: "Beginner - New to investing", value: "beginner" },
+  { label: "Intermediate - Some experience", value: "intermediate" },
+  { label: "Advanced - Experienced investor", value: "advanced" },
 ];
 
 export const investmentPurposeOptions = [
@@ -44,31 +44,10 @@ export const investmentPurposeOptions = [
   { label: "Growth", value: "Growth" },
 ];
 
-export const investmentHorizonOptions = [
-  {
-    label: "Short-term (1 year)",
-    value: 1,
-  },
-  {
-    label: "Short-term (5 years)",
-    value: 5,
-  },
-  {
-    label: "Medium-term (6 years)",
-    value: 6,
-  },
-  {
-    label: "Long-term (10+ years)",
-    value: 10,
-  },
-];
-
 export const riskToleranceOptions = [
-  { label: "Very Conservative - Minimal risk", value: "Very Conservative" },
-  { label: "Conservative - Low risk", value: "Conservative" },
-  { label: "Moderate - Balanced risk/return", value: "Moderate" },
-  { label: "Aggressive - High risk/return", value: "Aggressive" },
-  { label: "Very Aggressive - Maximum risk", value: "Very Aggressive" },
+  { label: "Very Conservative - Minimal risk", value: "low" },
+  { label: "Moderate - Balanced risk/return", value: "medium" },
+  { label: "Aggressive - High risk/return", value: "high" },
 ];
 
 export const currencyOptions = [

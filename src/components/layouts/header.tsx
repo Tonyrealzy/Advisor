@@ -3,7 +3,6 @@
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import { Button } from "../ui/button";
 import { KeyRound, LogOut, Menu } from "lucide-react";
-import { profileData } from "./data";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,9 +21,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const { navigateToResetPassword } = useNavigateInApp();
-  const { profile } = useGetProfile();
+  const { profile: profileData  } = useGetProfile();
   const { handleLogout, isLoading } = useLogout();
-  console.log("Profile data in Header:", profile);
 
   return (
     <div className="sticky top-0 z-40 border-b bg-white p-1">
@@ -47,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
               disabled={isLoading}
             >
               {isLoading ? (
-                "Logging out..."
+                <p className="text-red-700">Logging out...</p>
               ) : (
                 <>
                   <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-600 text-white">

@@ -14,6 +14,7 @@ export const useInteractWithAI = () => {
   const { navigateToTableRowView } = useNavigateInApp();
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<RecommendationRequest>({
@@ -34,11 +35,11 @@ export const useInteractWithAI = () => {
         queryKey: ["all-recommendations"],
         exact: false,
       });
-      toast.success(data.message || "Request successful!");
       navigateToTableRowView(data.id);
+      toast.success(data.message || "Request successful!");
     },
     onError: (error: any) => {
-      toast.error(error.error);
+      toast.error(error.message);
       consoleLog(error);
     },
   });
@@ -48,6 +49,7 @@ export const useInteractWithAI = () => {
   };
 
   return {
+    control,
     register,
     handleSubmit: handleSubmit(onSubmit),
     errors,

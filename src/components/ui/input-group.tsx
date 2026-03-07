@@ -3,22 +3,24 @@ import { Input } from "@/components/ui/input";
 import PasswordInput from "./password-input";
 
 interface InputGroupProps {
-  id: string;
+  id?: string;
   label: string;
   placeholder?: string;
   required?: boolean;
   hasErrors?: boolean;
+  disabled?: boolean;
   errorMessage?: string;
 }
 
 interface PasswordInputGroupProps {
-  id: string;
+  id?: string;
   label: string;
   placeholder?: string;
   visible: boolean;
   required?: boolean;
   hasErrors?: boolean;
   errorMessage?: string;
+  disabled?: boolean;
   setVisible: (v: boolean) => void;
 }
 
@@ -28,7 +30,9 @@ export function InputField({
   placeholder,
   required,
   hasErrors,
+  disabled,
   errorMessage,
+  ...props
 }: InputGroupProps) {
   return (
     <Field>
@@ -41,7 +45,9 @@ export function InputField({
         type="text"
         placeholder={placeholder}
         hasErrors={hasErrors}
+        disabled={disabled}
         errorMessage={errorMessage}
+        {...props}
       />
     </Field>
   );
@@ -54,6 +60,8 @@ export function NumberInputField({
   required,
   hasErrors,
   errorMessage,
+  disabled,
+  ...props
 }: InputGroupProps) {
   return (
     <Field>
@@ -67,6 +75,8 @@ export function NumberInputField({
         placeholder={placeholder}
         hasErrors={hasErrors}
         errorMessage={errorMessage}
+        disabled={disabled}
+        {...props}
       />
     </Field>
   );
@@ -80,7 +90,9 @@ export function PasswordInputField({
   setVisible,
   required,
   hasErrors,
+  disabled,
   errorMessage,
+  ...props
 }: PasswordInputGroupProps) {
   return (
     <Field>
@@ -95,6 +107,8 @@ export function PasswordInputField({
         setVisible={setVisible}
         hasErrors={hasErrors}
         errorMessage={errorMessage}
+        disabled={disabled}
+        {...props}
       />
     </Field>
   );

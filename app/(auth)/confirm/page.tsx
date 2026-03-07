@@ -1,4 +1,4 @@
-import ConfirmSignupPage from "@/features/auth/signup/Page";
+import ConfirmSignupPage from "@/features/auth/confirm-signup/Page";
 
 const Page = () => {
   return <ConfirmSignupPage />;

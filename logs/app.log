@@ -50,3 +50,530 @@
 [2026-03-05 16:51:22] [ERROR] - [development]: Invalid credentials for email: 
 [2026-03-05 16:56:09] [ERROR] - [development]: Invalid credentials for email: 
 [2026-03-05 16:56:19] [ERROR] - [development]: Invalid credentials for email: 
+[2026-03-05 17:50:55] [ERROR] - [development]: Invalid credentials for email: 
+[2026-03-05 17:52:44] [ERROR] - [development]: Invalid credentials for email: 
+[2026-03-05 17:52:58] [ERROR] - [development]: Invalid credentials for email: 
+[2026-03-06 15:35:44] [ERROR] - [development]: Invalid credentials for email: 
+[2026-03-06 15:52:13] [ERROR] - [development]: null
+[2026-03-06 15:52:13] [ERROR] - [development]: No existing user found with email: user11@example.com
+[2026-03-06 15:52:14] [INFO] - [development]: Sending OTP mail to: user11@example.com
+[2026-03-06 15:52:15] [INFO] - [development]: Mail sent
+[2026-03-06 15:52:15] [ERROR] - [development]: Token generated for email verification: d737e333-d6b5-48d5-8da8-fd09eddcecf8
+[2026-03-06 15:54:24] [INFO] - [development]: Sending OTP mail to: user11@example.com
+[2026-03-06 15:54:27] [INFO] - [development]: Mail sent
+[2026-03-06 15:54:27] [ERROR] - [development]: Token generated for email verification: 839616b8-8bff-4257-898e-bfa82afdc9ec
+[2026-03-07 13:38:43] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:38:44] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:40:09] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:40:10] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:41:13] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:41:14] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:41:24] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:41:25] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:43:08] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:45:13] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:45:59] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:46:45] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:46:59] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:47:02] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:48:57] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:49:03] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:50:30] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:50:37] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:50:42] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:50:59] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:51:07] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:51:56] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:52:13] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:54:05] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:54:39] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 13:57:43] [INFO] - [development]: Found 4 AI responses for user
+[2026-03-07 14:14:23] [INFO] - [development]: Found 5 AI responses for user
+[2026-03-07 14:19:27] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:26:23] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:28:53] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:30:04] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:30:40] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:31:59] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 14:32:21] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 15:20:56] [ERROR] - [development]: null
+[2026-03-07 15:20:56] [ERROR] - [development]: No existing user found with email: testarinze@gmail.com
+[2026-03-07 15:20:58] [INFO] - [development]: Sending OTP mail to: testarinze@gmail.com
+[2026-03-07 15:21:09] [ERROR] - [development]: Error sending Mail:  getaddrinfo ENOTFOUND smtp-relay.brevo.com
+[2026-03-07 15:21:09] [ERROR] - [development]: Token generated for email verification: c5b3f8e7-1160-4c67-bee1-33bae511e952
+[2026-03-07 16:20:24] [ERROR] - [development]: Password reset not found for the specified email
+[2026-03-07 16:30:24] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:30:29] [INFO] - [development]: Mail sent
+[2026-03-07 16:30:29] [INFO] - [development]: Token sent 6110d3c5c3492c71cd25747c297943a13e7d5b3ae39c8d054f5ce50a5eb15f20
+[2026-03-07 16:32:28] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:32:29] [INFO] - [development]: Mail sent
+[2026-03-07 16:32:29] [INFO] - [development]: Token sent 24ec4bbbc870e463cc8ecc6e3385aba44d5df11045f99c7ccd746843994ad6e7
+[2026-03-07 16:33:22] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:33:24] [INFO] - [development]: Mail sent
+[2026-03-07 16:33:24] [INFO] - [development]: Token sent 71834bf5a83f33a8d13fd7de02aee9cf252d61c3c2f9509cffc7aa3adb0be0eb
+[2026-03-07 16:34:00] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:34:01] [INFO] - [development]: Mail sent
+[2026-03-07 16:34:02] [INFO] - [development]: Token sent 06a2d8b5a93dd9adda8ac47a70e3204334746610e06469ca9e1b8446de7149fd
+[2026-03-07 16:35:00] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:35:01] [INFO] - [development]: Mail sent
+[2026-03-07 16:35:01] [INFO] - [development]: Token sent 0ad50e001b6a701e4d13d936093041e9a529b0312287d1df21b3551b0f20a717
+[2026-03-07 16:36:03] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:36:05] [INFO] - [development]: Mail sent
+[2026-03-07 16:36:05] [INFO] - [development]: Token sent 32368e2f0447a7c05b21286a22e1a4234ea9a420b72ce39bb61fac3c2d38714d
+[2026-03-07 16:37:21] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:37:22] [INFO] - [development]: Mail sent
+[2026-03-07 16:37:22] [INFO] - [development]: Token sent 767cfe467049c95a4e522b59732c3642febddeed051296a92e3b304fe29dc5e8
+[2026-03-07 16:38:59] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:39:00] [INFO] - [development]: Mail sent
+[2026-03-07 16:39:00] [INFO] - [development]: Token sent e38c7df4654afc282e33097967d6a97f84354bd253badcd5852b13d9c94978f3
+[2026-03-07 16:40:42] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:40:44] [INFO] - [development]: Mail sent
+[2026-03-07 16:40:44] [INFO] - [development]: Token sent 131eeee4485f12e7671401dfbca46915cb6d3ad7391d9e2c9657560e52aa356c
+[2026-03-07 16:53:33] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:53:36] [INFO] - [development]: Mail sent
+[2026-03-07 16:53:36] [INFO] - [development]: Token sent 700baf3123c90e3c15f0ab55de6764bcbbaf4b6cf112b2674937ea5309d6ad0f
+[2026-03-07 16:54:03] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:54:04] [INFO] - [development]: Mail sent
+[2026-03-07 16:54:04] [INFO] - [development]: Token sent ea4ae4310ad10a39fc837f21813c444ae4570b3b2a6d9cb5b5f2d5071d390b65
+[2026-03-07 16:54:56] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:54:57] [INFO] - [development]: Mail sent
+[2026-03-07 16:54:57] [INFO] - [development]: Token sent 80ab6e84d3b87bc00f9cc4690a96a5b9acb9244379f9293ecbaa6fa0a5b58af9
+[2026-03-07 16:56:01] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 16:56:03] [INFO] - [development]: Mail sent
+[2026-03-07 16:56:03] [INFO] - [development]: Token sent cb90cffb35cc36915ed471b983cfc0987ac6ad568c0cd3f502bf6d996379700e
+[2026-03-07 16:56:26] [INFO] - [development]: Sending Password Reset OTP mail to: testarinze@gmail.com
+[2026-03-07 16:56:28] [INFO] - [development]: Mail sent
+[2026-03-07 16:56:28] [INFO] - [development]: Token sent 2537b50002c51ec06e3d7424bf1c58fabc6fb63b12aea81bf0bee01b7a058a09
+[2026-03-07 16:56:33] [INFO] - [development]: Sending Password Reset OTP mail to: testarinze@gmail.com
+[2026-03-07 16:56:34] [INFO] - [development]: Mail sent
+[2026-03-07 16:56:34] [INFO] - [development]: Token sent 4b22bab20abe9253ff4b6a0e065ff509d75ec3b7a39eb4360b61a3d146cf91a8
+[2026-03-07 17:06:01] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 17:06:03] [INFO] - [development]: Mail sent
+[2026-03-07 17:06:03] [INFO] - [development]: Token sent b9d096e56cab3d0a3b31654cc84b73519340d017f87318668248cf72c20c1b74
+[2026-03-07 17:15:04] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 17:15:05] [INFO] - [development]: Mail sent
+[2026-03-07 17:15:05] [INFO] - [development]: Token sent dc548fede242f6a39c0452b6b1cbd172ecf13e1a293deb1db31ce5d37091093b
+[2026-03-07 17:15:10] [INFO] - [development]: Sending Password Reset OTP mail to: user@example.com
+[2026-03-07 17:15:12] [INFO] - [development]: Mail sent
+[2026-03-07 17:15:12] [INFO] - [development]: Token sent da0a2f9cea4380ed38b285cd9d1f516ef680102936fccd206181f288147344d2
+[2026-03-07 17:43:40] [ERROR] - [development]: Password reset not found for the specified email
+[2026-03-07 17:45:43] [INFO] - [development]: Sending Password Reset OTP mail to: user1@example.com
+[2026-03-07 17:45:45] [INFO] - [development]: Mail sent
+[2026-03-07 17:45:45] [INFO] - [development]: Token sent fd1992543a2c7da413bdf67f9eece60fafd4c50416f4d3ec7c4facca451e0a0e
+[2026-03-07 18:11:59] [ERROR] - [development]: null
+[2026-03-07 18:11:59] [ERROR] - [development]: No existing user found with email: testarinze1@gmail.com
+[2026-03-07 18:11:59] [INFO] - [development]: Sending OTP mail to: testarinze1@gmail.com
+[2026-03-07 18:12:01] [INFO] - [development]: Mail sent
+[2026-03-07 18:12:01] [ERROR] - [development]: Token generated for email verification: f63e9b24-f718-4f37-a699-f4a2ef200c4d
+[2026-03-07 18:14:03] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:03] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:04] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:04] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:05] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:05] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:06] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:06] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:06] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:06] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:07] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:07] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:08] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:08] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:09] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:09] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:09] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:09] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:10] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:10] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:10] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:10] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:11] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:11] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:12] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:12] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:13] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:13] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:13] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:13] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:15] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:15] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:15] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:15] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:16] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:16] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:17] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:17] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:18] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:18] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:18] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:18] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:20] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:20] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:20] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:20] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:21] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:21] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:21] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:21] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:22] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:22] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:23] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:23] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:24] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:24] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:24] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:24] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:26] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:26] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:26] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:26] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:27] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:27] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:28] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:28] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:29] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:29] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:29] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:29] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:30] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:30] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:31] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:31] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:32] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:32] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:33] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:33] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:34] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:34] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:34] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:34] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:35] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:35] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:35] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:35] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:36] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:36] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:37] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:37] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:39] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:39] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:39] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:39] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:40] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:40] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:40] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:40] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:41] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:41] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:42] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:42] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:43] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:43] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:43] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:43] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:44] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:44] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:44] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:44] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:46] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:46] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:46] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:46] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:47] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:47] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:47] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:47] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:48] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:48] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:49] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:49] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:50] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:50] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:50] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:50] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:51] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:51] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:51] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:51] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:53] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:53] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:53] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:53] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:54] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:54] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:54] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:54] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:55] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:55] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:55] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:55] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:57] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:57] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:57] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:57] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:58] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:58] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:58] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:58] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:59] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:59] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:14:59] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:14:59] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:01] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:01] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:01] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:01] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:02] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:02] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:03] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:03] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:04] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:04] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:04] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:04] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:05] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:05] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:05] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:05] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:07] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:07] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:07] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:07] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:08] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:08] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:22] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:22] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:24] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:24] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:24] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:24] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:25] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:25] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:25] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:25] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:27] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:27] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:27] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:27] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:28] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:28] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:29] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:29] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:30] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:30] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:30] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:30] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:31] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:31] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:31] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:31] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:33] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:33] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:33] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:33] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:34] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:34] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:35] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:35] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:36] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:36] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:36] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:36] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:37] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:37] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:38] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:38] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:39] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:39] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:39] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:39] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:41] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:41] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:41] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:41] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:43] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:43] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:43] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:43] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:44] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:44] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:45] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:45] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:46] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:46] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:46] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:46] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:48] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:48] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:48] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:48] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:49] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:49] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:50] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:50] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:51] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:51] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:52] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:52] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:53] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:53] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:53] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:53] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:55] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:55] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:55] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:55] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:56] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:56] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:56] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:56] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:57] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:57] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:15:58] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:15:58] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:00] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:00] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:00] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:00] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:02] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:02] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:02] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:02] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:04] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:04] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:04] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:04] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:06] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:06] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:06] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:06] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:07] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:07] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:07] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:07] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:08] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:08] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:09] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:09] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:10] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:10] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:10] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:10] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:12] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:12] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:12] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:12] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:13] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:13] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:13] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:13] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:14] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:14] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:14] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:14] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:16] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:16] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:16] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:16] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:17] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:17] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:17] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:17] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:18] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:18] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:19] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:19] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:20] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:20] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:20] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:20] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:21] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:21] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:26] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:26] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:26] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:26] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:28] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:28] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:28] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:28] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:29] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:29] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:29] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:29] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:32] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:32] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:35] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:35] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:37] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:37] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:37] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:37] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:38] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:38] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:38] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:38] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:39] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:39] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:40] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:40] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:41] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:41] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:41] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:41] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:42] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:42] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:42] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:43] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:44] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:44] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:44] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:44] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:45] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:45] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:45] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:45] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:47] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:47] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:47] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:47] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:48] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:48] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:48] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:48] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:16:50] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:16:50] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:19:40] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 18:19:50] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 18:21:46] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:21:46] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:22:01] [INFO] - [development]: Found 0 AI responses for user
+[2026-03-07 18:22:01] [ERROR] - [development]: No AI responses found for user
+[2026-03-07 18:23:16] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:26:27] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:26:45] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:27:28] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 18:27:44] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:31:58] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:33:20] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:34:34] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:36:31] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:37:19] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:38:05] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:49:32] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:56:06] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:56:29] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 18:58:59] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:06:33] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:07:40] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:08:25] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:08:58] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:09:22] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:09:54] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:13:11] [INFO] - [development]: Found 1 AI responses for user
+[2026-03-07 19:19:46] [ERROR] - [development]: jwt expired
+[2026-03-07 19:19:46] [ERROR] - [development]: jwt expired
+[2026-03-07 19:29:40] [ERROR] - [development]: jwt expired
+[2026-03-07 19:29:41] [ERROR] - [development]: jwt expired
+[2026-03-07 19:30:20] [INFO] - [development]: Found 6 AI responses for user
+[2026-03-07 19:30:33] [INFO] - [development]: Found 6 AI responses for user

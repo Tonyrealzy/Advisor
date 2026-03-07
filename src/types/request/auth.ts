@@ -1,6 +1,7 @@
 export interface SignUpRequestModel {
   email: string;
   password: string;
+  confirmPassword: string;
   userName: string;
   firstName: string;
   lastName: string;
@@ -21,6 +22,6 @@ export interface ConfirmSignupRequestModel {
 }
 
 export interface ChangePasswordRequestModel {
-  token: string;
-  newPassword: string;
+  password: string;
+  confirmPassword: string;
 }

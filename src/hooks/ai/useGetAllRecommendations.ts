@@ -1,13 +1,12 @@
 import { AIModelApi } from "@/lib/api/ai";
 import { RecommendationsResponse } from "@/types/response/ai";
-import { consoleLog } from "@/utilities/console-logger";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 export const useGetAllRecommendations = () => {
   const [page, setPage] = useState<number>(1);
   const pageSize = 10;
-  
+
   const { data: recommendations, isLoading } = useQuery({
     queryKey: ["all-recommendations"],
     retry: 1,
@@ -18,8 +17,10 @@ export const useGetAllRecommendations = () => {
       }
 
       const error = response.error || "Failed to fetch recommendations";
-      consoleLog("Recommendations error: ", error);
-      throw new Error(error);
+      return {
+        data: [],
+        pagination: { page, limit: pageSize, totalPages: 0 },
+      } as RecommendationsResponse;
     },
   });
 
@@ -41,7 +42,7 @@ export const useGetAllRecommendations = () => {
 
   return {
     isLoading,
-    recommendations: recommendations?.data,
+    recommendations: recommendations?.data || [],
     nextPage,
     previousPage,
     resetPage,

@@ -3,11 +3,28 @@
 import { Button } from "@/components/ui/button";
 import { PasswordInputField } from "@/components/ui/input-group";
 import AppLogo from "@/components/ui/logo";
+import { useChangePassword } from "@/hooks/auth/useChangePassword";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import { ArrowLeft } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const ChangePasswordPage = () => {
   const { navigateToLogin } = useNavigateInApp();
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+
+  const {
+    handleSubmit,
+    isLoading,
+    register,
+    errors,
+    visible,
+    setVisible,
+    confirmVisible,
+    setConfirmVisible,
+  } = useChangePassword({
+    token: token || "",
+  });
 
   return (
     <div className="w-full bg-secondary">
@@ -23,23 +40,34 @@ const ChangePasswordPage = () => {
       </aside>
 
       {/* Login form goes here */}
-      <form className="flex flex-col gap-4 md:gap-6 py-4">
+      <form
+        className="flex flex-col gap-4 md:gap-6 py-4"
+        onSubmit={handleSubmit}
+      >
         <PasswordInputField
           id="password"
           label="Password"
           placeholder="Enter your password"
-          visible={false}
-          setVisible={() => {}}
+          visible={visible}
+          setVisible={setVisible}
+          {...register("password")}
+          errorMessage={errors.password?.message}
+          hasErrors={!!errors.password}
         />
         <PasswordInputField
           id="confirmPassword"
           label="Confirm Password"
           placeholder="Confirm your password"
-          visible={false}
-          setVisible={() => {}}
+          visible={confirmVisible}
+          setVisible={setConfirmVisible}
+          {...register("confirmPassword")}
+          errorMessage={errors.confirmPassword?.message}
+          hasErrors={!!errors.confirmPassword}
         />
 
-        <Button className="mt-2">Change Password</Button>
+        <Button className="mt-2" type="submit" loading={isLoading}>
+          Change Password
+        </Button>
 
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-center">
           <span className="flex items-center gap-1">

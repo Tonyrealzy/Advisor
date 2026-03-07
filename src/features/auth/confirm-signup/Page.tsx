@@ -1,19 +1,29 @@
 "use client";
 
-import AppLogo from "@/components/ui/logo";
+import AuthLoader from "@/components/loaders/auth-loading";
+import { useConfirmSignup } from "@/hooks/auth/useSignup";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 const ConfirmSignupPage = () => {
-  return (
-    <div className="w-full bg-secondary">
-      <aside className="flex flex-col gap-3 md:gap-4 w-full items-center text-center">
-        <AppLogo />
-      </aside>
+  const searchParams = useSearchParams();
+  const { handleSubmit, isLoading } = useConfirmSignup();
 
-      <section>
-        {/* Add the loading state for handling the sign-up confirmation here. You can use a spinner or any loading indicator to show that the confirmation is in progress. Once the confirmation is successful, you can redirect the user to the login page or display a success message. */}
-      </section>
-    </div>
-  );
+  const email = searchParams.get("email");
+  const token = searchParams.get("token");
+
+
+  useEffect(() => {
+    if (email && token) {
+      handleSubmit({ email, token });
+    }
+  }, [email, token]);
+
+  if (isLoading) {
+    return <AuthLoader />;
+  }
+
+  return null;
 };
 
 export default ConfirmSignupPage;

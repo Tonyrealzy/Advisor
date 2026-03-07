@@ -14,5 +14,6 @@ export const EnvConfig = {
   supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
   databaseUrl: process.env.DATABASE_URL,
   directUrl: process.env.DIRECT_URL,
-  publicKey: process.env.VITE_APP_PUBLIC_KEY,
+  publicKey: process.env.NEXT_PUBLIC_KEY,
+  nextEnvironment: process.env.NEXT_PUBLIC_ENV,
 };

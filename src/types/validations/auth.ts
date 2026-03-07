@@ -14,6 +14,11 @@ const passwordSchema = yup
   )
   .matches(/^\S*$/, "Password must not contain spaces");
 
+const confirmPasswordSchema = yup
+  .string()
+  .oneOf([yup.ref("password")], "Passwords must match")
+  .required("Please confirm your password");
+
 export const signUpRequestSchema = yup.object({
   email: yup
     .string()
@@ -21,6 +26,8 @@ export const signUpRequestSchema = yup.object({
     .required("Email is required"),
 
   password: passwordSchema,
+
+  confirmPassword: confirmPasswordSchema,
 
   userName: yup
     .string()
@@ -78,11 +85,13 @@ export const confirmSignupRequestSchema = yup.object({
     .email("Please provide a valid email address")
     .required("Email is required"),
 
-  token: yup.string().required("Token is required").min(1, "Token is required"),
+  token: yup.string().optional(),
 });
 
 export const changePasswordRequestSchema = yup.object({
-  token: yup.string().required("Token is required").min(1, "Token is required"),
+  // token: yup.string().optional(),
 
-  newPassword: passwordSchema,
+  password: passwordSchema,
+
+  confirmPassword: confirmPasswordSchema,
 });

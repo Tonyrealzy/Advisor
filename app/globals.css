@@ -9,6 +9,11 @@
   display: none;
 }
 
+/* For Next overlay errors */
+body > iframe#webpack-dev-server-client-overlay {
+  display: none !important;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

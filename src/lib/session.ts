@@ -10,7 +10,21 @@ export const storage = {
     if (typeof window === "undefined") return null;
 
     const user = sessionStorage.getItem("user");
-    return user ? (JSON.parse(user) as User) : null;
+    console.log("Retrieved user from sessionStorage:", user);
+    return user !== null && user !== undefined
+      ? (JSON.parse(user) as User)
+      : ({
+          name: "User",
+          email: "",
+          firstName: "Unknown",
+          lastName: "User",
+          isActive: false,
+        } as User);
+  },
+
+  getEmail: () => {
+    if (typeof window === "undefined") return null;
+    return sessionStorage.getItem("email");
   },
 
   setAuth: (token: string, user: User) => {
@@ -22,12 +36,19 @@ export const storage = {
     sessionStorage.setItem("user", JSON.stringify(user));
   },
 
+  setEmail: (email: string) => {
+    sessionStorage.setItem("email", email);
+  },
+
   setToken: (token: string) => {
     sessionStorage.setItem("token", token);
   },
 
+  clearEmail: () => {
+    sessionStorage.removeItem("email");
+  },
+
   clearAuth: () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+    sessionStorage.clear();
   },
 };

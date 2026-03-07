@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { ToastContainer } from "react-toastify";
+import DevtoolGuard from "./providers/DevtoolGuard";
+import { GlobalErrorProvider } from "@/components/errors/GlobalErrorProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +42,12 @@ export default function RootLayout({
           draggable
           pauseOnHover
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          <GlobalErrorProvider>
+            <DevtoolGuard />
+            {children}
+          </GlobalErrorProvider>
+        </Providers>
       </body>
     </html>
   );

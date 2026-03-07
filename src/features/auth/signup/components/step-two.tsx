@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import AppLogo from "@/components/ui/logo";
-import { useResetPassword } from "@/hooks/auth/useResetPassword";
+import { useResendSignupLink } from "@/hooks/auth/useResendLink";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import { storage } from "@/lib/session";
 
@@ -8,8 +8,7 @@ const StepTwo = () => {
   const email = storage.getEmail();
 
   const { navigateToLogin } = useNavigateInApp();
-  const { handleLinkResend: handleSubmit, resendLoading: isLoading } =
-    useResetPassword({ setIsSubmitted: () => {} });
+  const { handleSubmit, isLoading } = useResendSignupLink();
 
   return (
     <div className="w-full bg-secondary">
@@ -21,8 +20,9 @@ const StepTwo = () => {
         </h1>
 
         <p className="text-sm md:text-base text-grey">
-          We have sent a password reset link to your email address. Please check
-          your inbox and follow the instructions to reset your password.
+          We have sent a link to your email address for account confirmation.
+          Please check your inbox and follow the instructions to confirm your
+          account.
         </p>
       </aside>
 

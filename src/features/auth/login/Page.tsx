@@ -3,11 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { InputField, PasswordInputField } from "@/components/ui/input-group";
 import AppLogo from "@/components/ui/logo";
+import { useLogin } from "@/hooks/auth/useLogin";
 import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 
 const LoginPage = () => {
-    const { navigateToSignup, navigateToResetPassword } = useNavigateInApp();
-  
+  const { navigateToSignup, navigateToResetPassword } = useNavigateInApp();
+  const { register, handleSubmit, errors, isLoading, visible, setVisible } = useLogin();
+
   return (
     <div className="w-full bg-secondary">
       <aside className="flex flex-col gap-2 md:gap-3 w-full items-center text-center">
@@ -22,17 +24,36 @@ const LoginPage = () => {
       </aside>
 
       {/* Login form goes here */}
-      <form className="flex flex-col gap-4 md:gap-6 py-4">
-        <InputField id="email" label="Email" placeholder="Enter your email" />
+      <form
+        className="flex flex-col gap-4 md:gap-6 py-4"
+        onSubmit={handleSubmit}
+      >
+        <InputField
+          id="email"
+          label="Email"
+          placeholder="Enter your email"
+          hasErrors={!!errors.email}
+          errorMessage={errors.email?.message}
+          {...register("email")}
+        />
         <PasswordInputField
           id="password"
           label="Password"
           placeholder="Enter your password"
-          visible={false}
-          setVisible={() => {}}
+          visible={visible}
+          setVisible={setVisible}
+          hasErrors={!!errors.password}
+          errorMessage={errors.password?.message}
+          {...register("password")}
         />
 
-        <Button className="mt-2">Login</Button>
+        <Button
+          className="mt-2"
+          loading={isLoading}
+          type="submit"
+        >
+          Login
+        </Button>
 
         <aside className="flex flex-col md:flex-row text-xs md:text-sm px-2 items-center justify-between">
           <span className="flex items-center gap-1">
@@ -42,7 +63,10 @@ const LoginPage = () => {
             </p>
           </span>
 
-          <p className="text-blue cursor-pointer underline" onClick={navigateToResetPassword}>
+          <p
+            className="text-blue cursor-pointer underline"
+            onClick={navigateToResetPassword}
+          >
             Forgot Password?
           </p>
         </aside>
