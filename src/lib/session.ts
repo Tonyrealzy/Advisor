@@ -10,7 +10,7 @@ export const storage = {
     if (typeof window === "undefined") return null;
 
     const user = sessionStorage.getItem("user");
-    console.log("Retrieved user from sessionStorage:", user);
+    
     return user !== null && user !== undefined
       ? (JSON.parse(user) as User)
       : ({
