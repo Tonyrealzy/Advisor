@@ -1,5 +1,5 @@
 
-# Advisor Next Frontend
+# Advisor Next
 
 Advisor Next is a modern web application built with [Next.js](https://nextjs.org), serving as the frontend for the Advisor AI platform. It provides users with personalized investment recommendations and access to their AI-generated investment responses, leveraging a robust backend API.
 
