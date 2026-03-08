@@ -14,7 +14,7 @@ export const MailService = {
       username: data.name,
       resetLink: data.resetLink,
       otpExpiry: OTP_EXPIRY_MINUTES,
-      appName: "L'amour Hub",
+      appName: "Advisor",
       year: new Date().getFullYear(),
     });
 
@@ -32,7 +32,7 @@ export const MailService = {
       username: data.name,
       resetLink: data.resetLink,
       otpExpiry: OTP_EXPIRY_MINUTES,
-      appName: "L'amour Hub",
+      appName: "Advisor",
       year: new Date().getFullYear(),
     });
 
