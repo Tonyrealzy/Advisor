@@ -42,13 +42,27 @@ export const AuthService = {
       );
     }
 
-    const token = generateAccessToken({
+    if (!existingUser.id || !existingUser.email) {
+      throw new Error(
+        "An error occurred while processing your request. Please try again later.",
+      );
+    }
+
+    const token = await generateAccessToken({
       id: existingUser.id,
       email: existingUser.email,
       name: existingUser.name,
     });
 
     const expiresAt = new Date(Date.now() + 120 * 60 * 1000);
+    const user = {
+      name: existingUser.name,
+      email: existingUser.email,
+      firstName: existingUser.firstName,
+      lastName: existingUser.lastName,
+      isActive: existingUser.isActive,
+    };
+
     const userSession = await getUserSessionByUserId(existingUser.id);
     if (!userSession) {
       const id = crypto.randomUUID();
@@ -60,18 +74,10 @@ export const AuthService = {
         expiresAt: expiresAt,
       });
 
-      return { token };
+      return { token, message: "Login successful", user };
     }
 
     await updateUserSessionToken(userSession?.id, token, expiresAt);
-
-    const user = {
-      name: existingUser.name,
-      email: existingUser.email,
-      firstName: existingUser.firstName,
-      lastName: existingUser.lastName,
-      isActive: existingUser.isActive,
-    };
 
     return { token, message: "Login successful", user };
   },

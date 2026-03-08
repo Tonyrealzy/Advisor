@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 export const useGetProfile = () => {
   const userProfile = storage.getUser();
 
-  const { isLoading: profileLoading } = useQuery({
+  const { data, isLoading: profileLoading } = useQuery({
     queryKey: ["user-profile"],
     retry: 1,
     queryFn: async () => {
@@ -38,5 +38,5 @@ export const useGetProfile = () => {
     },
   });
 
-  return { apiHealth, isLoading, profile: userProfile, profileLoading };
+  return { apiHealth, isLoading, profile: data || userProfile, profileLoading };
 };

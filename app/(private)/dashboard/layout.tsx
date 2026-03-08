@@ -7,7 +7,7 @@ import { useNavigateInApp } from "@/hooks/useNavigateInApp";
 import { ReactNode, useState } from "react";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated } = useLogin();
   const { navigateToLogin } = useNavigateInApp();
 
