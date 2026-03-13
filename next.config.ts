@@ -1,7 +1,30 @@
-import type { NextConfig } from "next";
+import withPWA from "next-pwa";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  turbopack: {},
+  // your Next.js config
 };
 
-export default nextConfig;
+export default withPWA({
+  dest: "public",
+  // other PWA options
+})(nextConfig);
+
+// const nextConfig: NextConfig = {
+//   turbopack: {},
+//   /* config options here */
+// };
+
+// export default withPWA({
+//   ...nextConfig,
+//   dest: "public",
+//   // other PWA options
+// });
+
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
+
+// export default nextConfig;
