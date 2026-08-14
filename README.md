@@ -43,9 +43,19 @@ pnpm dev
 
 Open [http://localhost:3002](http://localhost:3002) in your browser to view the app.
 
+The development server binds to `0.0.0.0`, so other frontend projects on your machine/network can reach the API on `http://<host-ip>:3002/api`.
+
 ## Environment Variables
 
 Ensure you have the required environment variables set up for API endpoints and authentication. See `.env.example` or project documentation for details.
+
+For external frontend access to this backend API, set:
+
+```bash
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3002,http://localhost:5173
+```
+
+The API CORS middleware allows only origins in this list for `/api/*` routes.
 
 ## Contributing
 
