@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { EnvConfig } from "@/config/env";
 
 const DEFAULT_ALLOWED_ORIGINS = [
   "http://localhost:3000",
+  "http://localhost:3001",
   "http://localhost:3002",
   "http://localhost:5173",
   "https://advisor-blush.vercel.app"
@@ -12,7 +12,7 @@ const ALLOWED_METHODS = "GET,POST,PUT,PATCH,DELETE,OPTIONS";
 const ALLOWED_HEADERS = "Authorization,Content-Type,X-Requested-With";
 
 function getAllowedOrigins(): Set<string> {
-  const configuredOrigins = (EnvConfig.allowedOrigins ?? "")
+  const configuredOrigins = (process.env.ALLOWED_ORIGINS ?? "")
     .split(",")
     .map((origin) => origin.trim())
     .filter(Boolean);
