@@ -2,6 +2,8 @@ import { EnvConfig } from "@/config/env";
 import * as aesjs from "aes-js";
 import { consoleLog } from "./console-logger";
 
+
+// To generate the key on bash, run: openssl rand -hex 16
 // Convert hexadecimal string to Base64
 function hexToBase64(hexstring: string): string {
   return btoa(

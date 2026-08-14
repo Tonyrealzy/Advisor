@@ -1,5 +1,6 @@
 export const EnvConfig = {
   nodeEnv: process.env.NODE_ENV,
+  allowedOrigins: process.env.ALLOWED_ORIGINS,
   brevoKey: process.env.BREVO_KEY,
   frontendHost: process.env.FRONTEND_HOST,
   googleApiKey: process.env.GOOGLE_API_KEY,
